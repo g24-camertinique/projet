@@ -1,10 +1,10 @@
 package test.git;
 
-public class Test_WP {
+public class Test_WP2 {
 	
 	
 	public void bonjour() {
-		System.out.println( "yessss" );
+		System.out.println( "Bonjoour" );
 	}
 	
 	
