@@ -94,6 +94,48 @@ CREATE TABLE service (
 );
 
 
+
+
+------------------------------------------------------------
+-- Table: Categorie
+------------------------------------------------------------
+
+
+CREATE TABLE Categorie1(
+	IdCategorie1             SERIAL NOT NULL ,
+	nomcategorie   VARCHAR (50) NOT NULL  ,
+	CONSTRAINT Categorie_PK PRIMARY KEY (IdCategorie1)
+);
+
+
+------------------------------------------------------------
+-- Table: course
+------------------------------------------------------------
+CREATE TABLE course(
+	IdCourse     SERIAL NOT NULL ,
+	Nom    VARCHAR (50) NOT NULL ,
+	date   DATE  NOT NULL  ,
+	CONSTRAINT course_PK PRIMARY KEY (IdCourse)
+);
+
+
+------------------------------------------------------------
+-- Table: Equipe
+------------------------------------------------------------
+CREATE TABLE Equipe(
+	IdEquipe                      SERIAL NOT NULL ,
+	Nom                     VARCHAR (50) NOT NULL ,
+	NbreRepas               INT  NOT NULL ,
+	Validation              BOOL  NOT NULL ,
+	DateInscriptionEquipe   DATE  NOT NULL ,
+	Id_Categorie            INT  NOT NULL ,
+	Id_course               INT  NOT NULL  ,
+	CONSTRAINT Equipe_PK PRIMARY KEY (IdEquipe )
+
+	,CONSTRAINT Equipe_Categorie_FK FOREIGN KEY (Id_Categorie) REFERENCES Categorie1(IdCategorie1)
+	,CONSTRAINT Equipe_course0_FK FOREIGN KEY (Id_course) REFERENCES course(IdCourse)
+);
+
 -- Vues
 
 CREATE VIEW v_compte_avec_roles AS
