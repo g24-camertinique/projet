@@ -12,7 +12,7 @@ GRANT ALL PRIVILEGES ON SCHEMA projet TO projet;
 
 CREATE TABLE etre_affecte_au (
 	idposte		INT		NOT NULL,
-	idbenevole	INT		NOT NULL,
+	idbenevole	INT		NOT NULL
 	--PRIMARY KEY (idposte, idbenevole),
 	--FOREIGN KEY (idposte) REFERENCES poste (idposte),
 	--FOREIGN KEY (idbenevole) REFERENCES benevole (idbenevole)
