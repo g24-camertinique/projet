@@ -132,7 +132,7 @@ public class DaoCategorie1 {
 
 		try {
 			cn = dataSource.getConnection();
-			sql = "SELECT * FROM categorie1 ORDER BY titre";
+			sql = "SELECT * FROM categorie1 ORDER BY nomcategorie";
 			stmt = cn.prepareStatement( sql );
 			rs = stmt.executeQuery();
 
@@ -148,31 +148,7 @@ public class DaoCategorie1 {
 			UtilJdbc.close( rs, stmt, cn );
 		}
 	}
-	
-    public int compterPourCategorie(int idCategorie) {
-    	
-		Connection			cn		= null;
-		PreparedStatement	stmt 	= null;
-		ResultSet 			rs		= null;
 
-		try {
-			cn = dataSource.getConnection();
-            String sql = "SELECT COUNT(*) FROM categorie1 WHERE idcategorie = ?";
-            stmt = cn.prepareStatement( sql );
-            stmt.setObject( 1, idCategorie );
-            rs = stmt.executeQuery();
-
-            rs.next();
-            return rs.getInt( 1 );
-
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		} finally {
-			UtilJdbc.close( rs, stmt, cn );
-		}
-    }
-	
-	
 	
 	// Méthodes auxiliaires
 	
