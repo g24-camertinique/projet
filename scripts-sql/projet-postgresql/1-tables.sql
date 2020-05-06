@@ -8,7 +8,7 @@ CREATE SCHEMA projet AUTHORIZATION projet;
 GRANT ALL PRIVILEGES ON SCHEMA projet TO projet;
 
 
--- Tables
+-- Nouvelles tables
 
 CREATE TABLE etre_affecte_au (
 	idposte		INT		NOT NULL,
