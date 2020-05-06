@@ -17,7 +17,7 @@ CREATE TABLE etre_affecte_au (
 	idposte		INT		NOT NULL,
 	idbenevole	INT		NOT NULL,
 	PRIMARY KEY (idposte, idbenevole)--,
-	--FOREIGN KEY (idposte) REFERENCES poste (idposte),
+	FOREIGN KEY (idposte) REFERENCES poste (idposte),
 	--FOREIGN KEY (idbenevole) REFERENCES benevole (idbenevole)
 );
 ------------------------------------------------------------
@@ -98,10 +98,11 @@ CREATE TABLE Equipe(
 	NbreRepas               INT  NOT NULL ,
 	Validation              BOOL  NOT NULL ,
 	DateInscriptionEquipe   DATE  NOT NULL ,
-	Id_Categorie            INT  NOT NULL ,
+	
 	Id_course               INT  NOT NULL  ,
+	Id_Categorie            INT  NOT NULL ,
+	
 	CONSTRAINT Equipe_PK PRIMARY KEY (IdEquipe )
-
 	,CONSTRAINT Equipe_Categorie_FK FOREIGN KEY (Id_Categorie) REFERENCES Categorie1(IdCategorie1)
 	,CONSTRAINT Equipe_course0_FK FOREIGN KEY (Id_course) REFERENCES course(IdCourse)
 );
