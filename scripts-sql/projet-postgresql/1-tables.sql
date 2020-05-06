@@ -39,7 +39,7 @@ CREATE TABLE benevole (
 	interne             BOOLEAN ,
 	disponibilité		VARCHAR(50),
 	validation 			BOOLEAN,
-	dateinscriptionb	DATE,
+	dateinscriptionb	DATE ,
 	PRIMARY KEY (idbenevole)--,
 	--FOREIGN KEY (idcompte) REFERENCES compte (idcompte)
 );
