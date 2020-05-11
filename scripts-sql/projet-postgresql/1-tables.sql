@@ -107,10 +107,15 @@ CREATE TABLE equipe(
 	nbrerepas               INT  NOT NULL ,
 	validation              BOOLEAN  NOT NULL ,
 	dateinscriptione  		DATE  NOT NULL ,
-	idcategorie          	INT  NOT NULL ,
-	idcourse              	INT  NOT NULL  ,
+	idcompte 				INT  NOT NULL,
+	idcourse              	INT  NOT NULL,
+	idcategorie          	INT  NOT NULL,
+	idcandidatcap           INT  NOT NULL,
+	idcandidateq            INT  NOT NULL,
+	
 	PRIMARY KEY (idequipe),
 	FOREIGN KEY (idcategorie) REFERENCES categorie1(idcategorie1),
+	FOREIGN KEY (idcourse) REFERENCES course(idcourse)
 	FOREIGN KEY (idcourse) REFERENCES course(idcourse)
 );
 
@@ -217,4 +222,3 @@ CREATE VIEW v_compte_avec_roles AS
 	FROM compte c 
 	LEFT JOIN ROLE r ON c.idcompte = r.idcompte
 	GROUP BY c.idcompte;
-
