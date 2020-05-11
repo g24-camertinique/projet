@@ -12,9 +12,49 @@ DELETE FROM role;
 DELETE FROM compte;
 
 
--- Compte
+--nouvelles insertions
 
-INSERT INTO compte (idcompte, pseudo, motdepasse, email ) VALUES 
+-- candidat
+
+INSERT INTO candidat (idcandidat, pseudo, nom, prenom, dateden, adresse, numtelephone,
+mail) VALUES 
+  (1, 'pao11', 'wofa', 'paolyne','2000-01-04' , '185limoges' , '05854278','pao@3il.fr' ),
+  
+(2, 'pao121', 'ngassie', 'sorelle','2008-04-06' , '189paris' , '05688452','sorelle@3il.fr' );
+  
+-- benevoles
+
+ INSERT INTO benevole (idbenevole, nom, prenom, dateden, adresse, numtelephone, mail, interne, disponibilité , validation , dateinscriptionb,
+) VALUES 
+  (1,'wofa', 'paolyne','2000-01-04' , '185limoges' , '05854278','pao@3il.fr','true',' indisponible','false','2000-04-06' ),
+   (2,'ngassie', 'sorelle','2000-02-04' , '185nice' , '05854978','wofa@3il.fr','false',' disponible','true','2000-04-07' );
+ 
+ -- poste
+ 
+INSERT INTO poste (idposte, libelle, heuredebut, heurefin, nbrbenevoles, types) VALUES 
+  (1, 'benevole', '11', '12','5' , 'libre');
+  
+-- course 
+INSERT INTO course (idcourse, nom, datecourse) VALUES 
+  (1, 'course1', '11');
+  
+ 
+-- equipes
+INSERT INTO equipe (idequipe, nom, nbrerepas, validation, dateinscriptione, idcategorie,  idcourse) VALUES 
+  (1, 'team1', '11', 'false','15' , '6' '3');
+  
+-- categorie 1
+INSERT INTO categorie1 (idcategorie1, nomcategorie) VALUES 
+  (1, 'categorie1'),
+  (2, 'categorie2');
+  
+ -- souhaiter
+ INSERT INTO souhaiter (idposte, idbenevole) VALUES 
+  (1,2),
+  (2,3);
+
+-- Compte
+INSERT INTO compte (idcompte, club, motdepasse, email ) VALUES 
   (1, 'geek', 'geek', 'geek@3il.fr' ),
   (2, 'chef', 'chef', 'chef@3il.fr' ),
   (3, 'job', 'job', 'job@3il.fr' );
@@ -29,7 +69,6 @@ INSERT INTO role (idcompte, role) VALUES
   ( 1, 'UTILISATEUR' ),
   ( 2, 'UTILISATEUR' ),
   ( 3, 'UTILISATEUR' );
-
 
 -- Categorie
   
