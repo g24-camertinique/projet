@@ -26,7 +26,7 @@ public class DaoMemo {
 	private DataSource		dataSource;
 	@Inject
 	private DaoCategorie	daoCategorie;
-	@Inject
+	//@Inject
 	private DaoPersonne		daoPersonne;
 
 	
