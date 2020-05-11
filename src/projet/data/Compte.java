@@ -129,5 +129,7 @@ public class Compte  {
 		Compte other = (Compte) obj;
 		return Objects.equals(id.getValue(), other.id.getValue() );
 	}
+
+	
 	
 }
