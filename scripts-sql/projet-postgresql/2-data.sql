@@ -32,16 +32,17 @@ mail) VALUES
  -- poste
  
 INSERT INTO poste (idposte, libelle, heuredebut, heurefin, nbrbenevoles, types) VALUES 
-  (1, 'benevole', '11', '12','5' , 'libre');
-  
+  (1, 'benevole externe', '11:01:32', '12:04:54',5 , 'libre')?
+   (2, 'benevole interne', '11:08:32', '12:04:58',6 , 'libre');
 -- course 
 INSERT INTO course (idcourse, nom, datecourse) VALUES 
-  (1, 'course1', '11');
-  
+  (1, 'course1', '2014-08-04'),
+  (2, 'course2', '2011-08-04');
  
 -- equipes
 INSERT INTO equipe (idequipe, nom, nbrerepas, validation, dateinscriptione, idcategorie,  idcourse) VALUES 
-  (1, 'team1', '11', 'false','15' , '6' '3');
+  (1, 'team1', 11, 'false','2012-02-05' , 1, 2),
+  (2, 'team2', 14, 'true','2017-02-05' , 2, 1);
   
 -- categorie 1
 INSERT INTO categorie1 (idcategorie1, nomcategorie) VALUES 
@@ -51,8 +52,23 @@ INSERT INTO categorie1 (idcategorie1, nomcategorie) VALUES
  -- souhaiter
  INSERT INTO souhaiter (idposte, idbenevole) VALUES 
   (1,2),
-  (2,3);
+  (2,1);
 
+
+--  etre_affecte_au
+
+INSERT INTO etre_affecte_au (idposte, idbenevole ) VALUES 
+  (1, 2 ),
+  (2, 2 );
+--  Document
+INSERT INTO document (iddocument, libelle, idcandidat ) VALUES 
+  (1, 'doc1', 1 ),
+  (2, 'doc2', 2 );
+-- compteA
+INSERT INTO compteA (idcompte, login, motdepasse ) VALUES 
+  (1, 'pao', 'pao'),
+  (2, 'soso', 'soso' );
+  
 -- Compte
 INSERT INTO compte (idcompte, club, motdepasse, email ) VALUES 
   (1, 'geek', 'geek', 'geek@3il.fr' ),
