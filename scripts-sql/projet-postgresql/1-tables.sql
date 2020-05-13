@@ -47,7 +47,7 @@ CREATE TABLE benevole (
 	numtelephone		INT NOT NULL,
 	mail 				VARCHAR(50),
 	interne             BOOLEAN ,
-	disponibilité		VARCHAR(50),
+	disponibilite		VARCHAR(50),
 	validation 			BOOLEAN,
 	dateinscriptionb	DATE,
 	idcompte            INT NOT NULL,
