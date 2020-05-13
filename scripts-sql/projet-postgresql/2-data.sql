@@ -10,67 +10,85 @@ DELETE FROM personne;
 DELETE FROM categorie;
 DELETE FROM role;
 DELETE FROM compte;
-
+DELETE FROM candidat;
+DELETE FROM benevole;
+DELETE FROM poste;
+DELETE FROM course;
+DELETE FROM equipe;
+DELETE FROM categorie1;
+DELETE FROM souhaiter;
+DELETE FROM etre_affecte_au;
+DELETE FROM document;
+DELETE FROM compteA;
 
 --nouvelles insertions
 
+-- compteA
+INSERT INTO compteA (idcompte, login, motdepasse ) VALUES 
+  (1, 'pao', 'pao'),
+  (2, 'soso', 'soso' ),
+  (3, 'amanda', 'amanda' ),
+  (4, 'chachy', 'chachy' );
+  
 -- candidat
-
-INSERT INTO candidat (idcandidat, pseudo, nom, prenom, dateden, adresse, numtelephone,
+INSERT INTO candidat (idcandidat, club, nom, prenom, dateden, adresse, numtelephone,
 mail) VALUES 
-  (1, 'pao11', 'wofa', 'paolyne','2000-01-04' , '185limoges' , '05854278','pao@3il.fr' ),
-  
-(2, 'pao121', 'ngassie', 'sorelle','2008-04-06' , '189paris' , '05688452','sorelle@3il.fr' );
-  
+(1, 'pao121', 'ngassie', 'sorelle','2008-04-06' , '189paris' , '05688452','sorelle@3il.fr' ),
+  (2, 'pao141', 'ngassie', 'sorelle','2008-04-06' , '189paris' , '05688452','sorelle@3il.fr' );
 -- benevoles
 
- INSERT INTO benevole (idbenevole, nom, prenom, dateden, adresse, numtelephone, mail, interne, disponibilité , validation , dateinscriptionb,
-) VALUES 
-  (1,'wofa', 'paolyne','2000-01-04' , '185limoges' , '05854278','pao@3il.fr','true',' indisponible','false','2000-04-06' ),
-   (2,'ngassie', 'sorelle','2000-02-04' , '185nice' , '05854978','wofa@3il.fr','false',' disponible','true','2000-04-07' );
- 
- -- poste
+ INSERT INTO benevole (idbenevole, nom, prenom, dateden, adresse, numtelephone, mail, interne, disponibilité , validation , dateinscriptionb, idcompte) VALUES 
+  (1,'wofa', 'paolyne','2000-01-04' , '185limoges' , '05854278','pao@3il.fr','true',' indisponible','false','2000-04-06',1 ),
+   (2,'ngassie', 'sorelle','2000-02-04' , '185nice' , '05854978','wofa@3il.fr','false',' disponible','true','2000-04-07',2 );
+
+    -- poste
  
 INSERT INTO poste (idposte, libelle, heuredebut, heurefin, nbrbenevoles, types) VALUES 
-  (1, 'benevole externe', '11:01:32', '12:04:54',5 , 'libre')?
+  (1, 'benevole externe', '11:01:32', '12:04:54',5 , 'libre'),
    (2, 'benevole interne', '11:08:32', '12:04:58',6 , 'libre');
--- course 
-INSERT INTO course (idcourse, nom, datecourse) VALUES 
-  (1, 'course1', '2014-08-04'),
-  (2, 'course2', '2011-08-04');
- 
--- equipes
-INSERT INTO equipe (idequipe, nom, nbrerepas, validation, dateinscriptione, idcategorie,  idcourse) VALUES 
-  (1, 'team1', 11, 'false','2012-02-05' , 1, 2),
-  (2, 'team2', 14, 'true','2017-02-05' , 2, 1);
+   
   
--- categorie 1
-INSERT INTO categorie1 (idcategorie1, nomcategorie) VALUES 
-  (1, 'categorie1'),
-  (2, 'categorie2');
-  
- -- souhaiter
- INSERT INTO souhaiter (idposte, idbenevole) VALUES 
-  (1,2),
-  (2,1);
-
-
---  etre_affecte_au
+  --  etre_affecte_au
 
 INSERT INTO etre_affecte_au (idposte, idbenevole ) VALUES 
   (1, 2 ),
   (2, 2 );
---  Document
+  
+  --  Document
 INSERT INTO document (iddocument, libelle, idcandidat ) VALUES 
   (1, 'doc1', 1 ),
   (2, 'doc2', 2 );
--- compteA
-INSERT INTO compteA (idcompte, login, motdepasse ) VALUES 
-  (1, 'pao', 'pao'),
-  (2, 'soso', 'soso' );
+  
+  -- categorie1
+  INSERT INTO categorie1 (idcategorie1, nomcategorie) VALUES 
+  (1, 'categorie1'),
+  (2, 'categorie2');
+
+  --course
+   INSERT INTO course (idcourse, nom, datecourse) VALUES 
+  (1, 'course1', '2014-08-04'),
+  (4, 'course2', '2011-08-04');
+
+ 
+-- equipes
+INSERT INTO equipe (idequipe, nom, nbrerepas, validation, dateinscriptione, idcompte, idcourse, idcategorie1, idcandidatcap, idcandidateq) VALUES 
+  
+  (3, 'team2', 14, 'true','2017-02-05' , 3, 1,1,1,2);
+  
+--souhaiter
+ INSERT INTO souhaiter (idposte, idbenevole) VALUES 
+  (1,1 ),
+  (2,2 );
+
+  
+ 
+
+
+
+
   
 -- Compte
-INSERT INTO compte (idcompte, club, motdepasse, email ) VALUES 
+INSERT INTO compte (idcompte, pseudo, motdepasse, email ) VALUES 
   (1, 'geek', 'geek', 'geek@3il.fr' ),
   (2, 'chef', 'chef', 'chef@3il.fr' ),
   (3, 'job', 'job', 'job@3il.fr' );
