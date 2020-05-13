@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 import jfox.commun.exception.ExceptionValidation;
 import jfox.javafx.util.UtilFX;
 import projet.commun.IMapper;
+import projet.dao.DaoCompte;
 import projet.dao.DaoCompte2;
 import projet.data.Compte;
 
@@ -26,7 +27,7 @@ public class ModelCompte {
     @Inject
 	private IMapper			mapper;
     @Inject
-	private DaoCompte2		daoCompte;
+	private DaoCompte		daoCompte;
 	
 	
 	// Getters

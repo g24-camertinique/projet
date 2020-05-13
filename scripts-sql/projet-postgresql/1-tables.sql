@@ -116,7 +116,6 @@ CREATE TABLE equipe(
 	PRIMARY KEY (idequipe),
 	FOREIGN KEY (idcategorie) REFERENCES categorie1(idcategorie1),
 	FOREIGN KEY (idcourse) REFERENCES course(idcourse)
-	FOREIGN KEY (idcourse) REFERENCES course(idcourse)
 );
 
 
@@ -136,9 +135,9 @@ CREATE TABLE compteA (
 	login			VARCHAR(25)		NOT NULL,
 	motdepasse		VARCHAR(25) 	NOT NULL,
 	
-	PRIMARY KEY (idcompte),
-	
+	PRIMARY KEY (idcompte)
 );
+
 -- Table: Compte
 ------------------------------------------------------------
 CREATE TABLE compte (
