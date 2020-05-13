@@ -29,51 +29,60 @@ INSERT INTO compteA (idcompte, login, motdepasse ) VALUES
   (2, 'soso', 'soso' ),
   (3, 'amanda', 'amanda' ),
   (4, 'chachy', 'chachy' );
+  ALTER TABLE comptea ALTER COLUMN idcompte RESTART WITH 5;
   
 -- candidat
 INSERT INTO candidat (idcandidat, club, nom, prenom, dateden, adresse, numtelephone,
 mail) VALUES 
 (1, 'pao121', 'ngassie', 'sorelle','2008-04-06' , '189paris' , '05688452','sorelle@3il.fr' ),
   (2, 'pao141', 'ngassie', 'sorelle','2008-04-06' , '189paris' , '05688452','sorelle@3il.fr' );
+ALTER TABLE candidat ALTER COLUMN idcandidat RESTART WITH 3;
+  
 -- benevoles
 
- INSERT INTO benevole (idbenevole, nom, prenom, dateden, adresse, numtelephone, mail, interne, disponibilité , validation , dateinscriptionb, idcompte) VALUES 
+ INSERT INTO benevole (idbenevole, nom, prenom, dateden, adresse, numtelephone, mail, interne, disponibilite , validation , dateinscriptionb, idcompte) VALUES 
   (1,'wofa', 'paolyne','2000-01-04' , '185limoges' , '05854278','pao@3il.fr','true',' indisponible','false','2000-04-06',1 ),
    (2,'ngassie', 'sorelle','2000-02-04' , '185nice' , '05854978','wofa@3il.fr','false',' disponible','true','2000-04-07',2 );
+ALTER TABLE benevole ALTER COLUMN idbenevole RESTART WITH 3;
 
-    -- poste
+-- poste
  
 INSERT INTO poste (idposte, libelle, heuredebut, heurefin, nbrbenevoles, types) VALUES 
   (1, 'benevole externe', '11:01:32', '12:04:54',5 , 'libre'),
    (2, 'benevole interne', '11:08:32', '12:04:58',6 , 'libre');
-   
+ ALTER TABLE poste ALTER COLUMN idposte RESTART WITH 3;
   
   --  etre_affecte_au
 
 INSERT INTO etre_affecte_au (idposte, idbenevole ) VALUES 
   (1, 2 ),
   (2, 2 );
+
   
   --  Document
 INSERT INTO document (iddocument, libelle, idcandidat ) VALUES 
   (1, 'doc1', 1 ),
   (2, 'doc2', 2 );
-  
+ ALTER TABLE document ALTER COLUMN iddocument RESTART WITH 3;
+ 
   -- categorie1
   INSERT INTO categorie1 (idcategorie1, nomcategorie) VALUES 
   (1, 'categorie1'),
   (2, 'categorie2');
+   ALTER TABLE categorie1 ALTER COLUMN idcategorie1 RESTART WITH 3;
 
   --course
    INSERT INTO course (idcourse, nom, datecourse) VALUES 
   (1, 'course1', '2014-08-04'),
-  (4, 'course2', '2011-08-04');
+  (2, 'course2', '2011-08-04');
+   ALTER TABLE course ALTER COLUMN idcourse RESTART WITH 3;
 
  
 -- equipes
 INSERT INTO equipe (idequipe, nom, nbrerepas, validation, dateinscriptione, idcompte, idcourse, idcategorie1, idcandidatcap, idcandidateq) VALUES 
   
-  (3, 'team2', 14, 'true','2017-02-05' , 3, 1,1,1,2);
+  (2, 'team2', 14, 'true','2017-02-05' , 3, 1,1,1,2);
+   ALTER TABLE equipe ALTER COLUMN idequipe RESTART WITH 3;
   
 --souhaiter
  INSERT INTO souhaiter (idposte, idbenevole) VALUES 

@@ -37,7 +37,7 @@ public class DaoBenevole {
 		
 		try {
 			cn = dataSource.getConnection();
-			sql = "INSERT INTO benevole ( nom, prenom, dateden, adresse, numtelephone, mail, interne, disponibilite, validation, dateinscriptionb ) VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) ";
+			sql = "INSERT INTO benevole ( nom, prenom, dateden, adresse, numtelephone, mail, interne, disponibilite, validation, dateinscriptionb, idcompte ) VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) ";
 			stmt = cn.prepareStatement( sql, Statement.RETURN_GENERATED_KEYS );
 			stmt.setObject( 1, benevole.getNom() );
 			stmt.setObject( 2, benevole.getPrenom() );
@@ -49,6 +49,7 @@ public class DaoBenevole {
 			stmt.setObject( 8, benevole.getDisponibilite() );
 			stmt.setObject( 9, benevole.getValidation() );
 			stmt.setObject( 10, benevole.getDateInscriptionB() );
+			stmt.setObject( 11, benevole.getIdCompte() );
 			
 			stmt.executeUpdate();
 
@@ -74,7 +75,7 @@ public class DaoBenevole {
 
 		try {
 			cn = dataSource.getConnection();
-			sql = "UPDATE benevole SET nom = ?, prenom = ?, dateden = ?, adresse = ?, numtelephone = ?, mail = ?, interne = ?, disponibilite = ?, validation = ?, dateinscriptionb = ? WHERE idbenevole =  ?";
+			sql = "UPDATE benevole SET nom = ?, prenom = ?, dateden = ?, adresse = ?, numtelephone = ?, mail = ?, interne = ?, disponibilite = ?, validation = ?, dateinscriptionb = ?, idcompte = ? WHERE idbenevole =  ?";
 			stmt = cn.prepareStatement( sql );
 			stmt.setObject( 1, benevole.getNom() );
 			stmt.setObject( 2, benevole.getPrenom() );
@@ -86,7 +87,8 @@ public class DaoBenevole {
 			stmt.setObject( 8, benevole.getDisponibilite() );
 			stmt.setObject( 9, benevole.getValidation() );
 			stmt.setObject( 10, benevole.getDateInscriptionB() );
-			stmt.setObject( 11, benevole.getIdBenevole() );
+			stmt.setObject( 11, benevole.getIdCompte() );
+			stmt.setObject( 12, benevole.getIdBenevole() );
 			stmt.executeUpdate();
 
 		} catch (SQLException e) {
@@ -189,6 +191,8 @@ public class DaoBenevole {
 		benevole.setDisponibilite( rs.getObject( "disponibilite", String.class ) );
 		benevole.setValidation( rs.getObject( "validation", Boolean.class ) );
 		benevole.setDateInscriptionB( rs.getObject( "dateinscriptionb", LocalDate.class ) );
+		benevole.setIdCompte( rs.getObject( "idcompte", Integer.class ) );
+		
 		return benevole;
 	}
 

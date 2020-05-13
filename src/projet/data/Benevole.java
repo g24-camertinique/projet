@@ -25,6 +25,7 @@ public class Benevole {
 	private final StringProperty   		disponibilite		= new SimpleStringProperty();
 	private final Property<Boolean>		validation			= new SimpleObjectProperty<>( false );
 	private final Property<LocalDate>	dateInscriptionB	= new SimpleObjectProperty<>();
+	private final Property<Integer>		idCompte			= new SimpleObjectProperty<>();
 
 	
 	
@@ -173,6 +174,19 @@ public class Benevole {
 		this.dateInscriptionBProperty().setValue(dateInscriptionB);
 	}
 	
+		//idCompte
+	public final Property<Integer> idCompteProperty() {
+		return this.idCompte;
+	}
+	
+	public final Integer getIdCompte() {
+		return this.idCompteProperty().getValue();
+	}
+	
+	public final void setIdCompte(final Integer idCompte) {
+		this.idCompteProperty().setValue(idCompte);
+	}
+	
 	
 	// hashCode() & equals()
 
@@ -192,5 +206,8 @@ public class Benevole {
 			Benevole other = (Benevole) obj;
 			return Objects.equals( idBenevole.getValue(), other.idBenevole.getValue() );
 		}
+
+		
+		
 
 }
