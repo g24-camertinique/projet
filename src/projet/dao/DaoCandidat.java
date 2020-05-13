@@ -36,12 +36,12 @@ public class DaoCandidat {
 		
 		try {
 			cn = dataSource.getConnection();
-			sql = "INSERT INTO memo ( club, nom, prenom, datedenaissance, adresse, numtelephone, mail ) VALUES( ?, ?, ?, ?, ?, ?, ? ) ";
+			sql = "INSERT INTO candidat ( club, nom, prenom, datedenaissance, adresse, numtelephone, mail ) VALUES( ?, ?, ?, ?, ?, ?, ? ) ";
 			stmt = cn.prepareStatement( sql, Statement.RETURN_GENERATED_KEYS );
 			stmt.setObject( 1, candidat.getClub() );
 			stmt.setObject( 2, candidat.getNom() );
 			stmt.setObject( 3, candidat.getPrenom() );
-			stmt.setObject( 4, candidat.getDatedenaissance() );
+			stmt.setObject( 4, candidat.getDateDeN() );
 			stmt.setObject( 5, candidat.getAdresse() );
 			stmt.setObject( 6, candidat.getNumtelephone() );
 			stmt.setObject( 7, candidat.getMail() );
@@ -50,11 +50,11 @@ public class DaoCandidat {
 			// Récupère l'identifiant généré par le SGBD
 			rs = stmt.getGeneratedKeys();
 			rs.next();
-			candidat.setId( rs.getObject( 1, Integer.class) );
+			candidat.setIdCandidat( rs.getObject( 1, Integer.class) );
 			
 			insererConcerner(candidat );
 			
-			return candidat.getId();
+			return candidat.getIdCandidat();
 	
 		} catch ( SQLException e ) {
 			throw new RuntimeException(e);
@@ -78,12 +78,12 @@ public class DaoCandidat {
 
 		try {
 			cn = dataSource.getConnection();
-			sql = "UPDATE memo SET club = ?, nom = ?, prenom = ?, datedenaissance = ?, adresse = ?, numtelephonee = ?, mail = ? WHERE idcandidat =  ?";
+			sql = "UPDATE candidat SET club = ?, nom = ?, prenom = ?, dateden = ?, adresse = ?, numtelephone = ?, mail = ? WHERE idcandidat =  ?";
 			stmt = cn.prepareStatement( sql );
 			stmt.setObject( 1, candidat.getClub() );
 			stmt.setObject( 2, candidat.getNom() );
 			stmt.setObject( 3, candidat.getPrenom () );
-			stmt.setObject( 4, candidat.getDatedenaissance() );
+			stmt.setObject( 4, candidat.getDateDeN() );
 			stmt.setObject( 5, candidat.getAdresse() );
 			stmt.setObject( 6, candidat.getNumtelephone() );
 			stmt.setObject( 7, candidat.getMail() );
@@ -153,7 +153,7 @@ public class DaoCandidat {
 
 		try {
 			cn = dataSource.getConnection();
-			sql = "SELECT * FROM service ORDER BY nom";
+			sql = "SELECT * FROM candidat ORDER BY nom";
 			stmt = cn.prepareStatement( sql );
 			rs = stmt.executeQuery();
 
@@ -175,13 +175,13 @@ public class DaoCandidat {
 
 	private Candidat construireCandidat( ResultSet rs) throws SQLException {
 		Candidat candidat = new Candidat();
-		candidat.setId( rs.getObject( "id", Integer.class ) );
+		candidat.setIdCandidat( rs.getObject( "idcandidat", Integer.class ) );
 		candidat.setClub( rs.getObject( "club", String.class ) );
 		candidat.setNom( rs.getObject( "nom", String.class ) );
 		candidat.setPrenom( rs.getObject( "prenom", String.class ) );
-		candidat.setDatedenaissance( rs.getObject( "datedenaissance", LocalDate.class ) );
-		candidat.setAdresse( rs.getObject( "adresse", Integer.class ) );
-		candidat.setNumtelephone( rs.getObject( "numerotelephone", Integer.class ) );
+		candidat.setDateDeN( rs.getObject( "dateden", LocalDate.class ) );
+		candidat.setAdresse( rs.getObject( "adresse", String.class ) );
+		candidat.setNumtelephone( rs.getObject( "numtelephone", Integer.class ) );
 		candidat.setMail( rs.getObject( "mail", String.class ) );
 		return candidat;
 		

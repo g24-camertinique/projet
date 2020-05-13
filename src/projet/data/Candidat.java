@@ -13,12 +13,12 @@ public class Candidat {
 	
 	// Champs
 	
-	private final Property<Integer>		id			= new SimpleObjectProperty<>();
+	private final Property<Integer>		idCandidat			= new SimpleObjectProperty<>();
 	private final StringProperty   	 	club      	= new SimpleStringProperty();
 	private final StringProperty   		nom			= new SimpleStringProperty();
 	private final StringProperty 	prenom		= new SimpleStringProperty();
-	private final Property<LocalDate>		datedenaissance		= new SimpleObjectProperty<>();
-	private final Property<Integer>		adresse		= new SimpleObjectProperty<>();
+	private final Property<LocalDate>		dateDeN		= new SimpleObjectProperty<>();
+	private final StringProperty		adresse		= new SimpleStringProperty();
 	private final Property<Integer>	numtelephone	= new SimpleObjectProperty<>();
 	private final StringProperty 	mail	= new SimpleStringProperty();
 	//private final ObservableList<Personne> personnes = FXCollections.observableArrayList();
@@ -28,7 +28,7 @@ public class Candidat {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash( id.getValue() );
+		return Objects.hash( idCandidat.getValue() );
 	}
 
 	@Override
@@ -40,23 +40,24 @@ public class Candidat {
 		if (getClass() != obj.getClass())
 			return false;
 		Candidat other = (Candidat) obj;
-		return Objects.equals( id.getValue(), other.id.getValue() );
+		return Objects.equals( idCandidat.getValue(), other.idCandidat.getValue() );
 	}
 
 	// Getters & setters
 	
-	public final Property<Integer> idProperty() {
-		return this.id;
+	
+	public final Property<Integer> idCandidatProperty() {
+		return this.idCandidat;
 	}
 	
 
-	public final Integer getId() {
-		return this.idProperty().getValue();
+	public final Integer getIdCandidat() {
+		return this.idCandidatProperty().getValue();
 	}
 	
 
-	public final void setId(final Integer id) {
-		this.idProperty().setValue(id);
+	public final void setIdCandidat(final Integer idCandidat) {
+		this.idCandidatProperty().setValue(idCandidat);
 	}
 	
 
@@ -105,36 +106,9 @@ public class Candidat {
 	}
 	
 
-	public final Property<LocalDate> datedenaissanceProperty() {
-		return this.datedenaissance;
-	}
 	
 
-	public final LocalDate getDatedenaissance() {
-		return this.datedenaissanceProperty().getValue();
-	}
 	
-
-	public final void setDatedenaissance(final LocalDate datedenaissance) {
-		this.datedenaissanceProperty().setValue(datedenaissance);
-	}
-	
-
-	public final Property<Integer> adresseProperty() {
-		return this.adresse;
-	}
-	
-
-	public final Integer getAdresse() {
-		return this.adresseProperty().getValue();
-	}
-	
-
-	public final void setAdresse(final Integer adresse) {
-		this.adresseProperty().setValue(adresse);
-	}
-	
-
 	public final Property<Integer> numtelephoneProperty() {
 		return this.numtelephone;
 	}
@@ -162,6 +136,39 @@ public class Candidat {
 	public final void setMail(final String mail) {
 		this.mailProperty().set(mail);
 	}
+
+	public final Property<LocalDate> dateDeNProperty() {
+		return this.dateDeN;
+	}
+	
+
+	public final LocalDate getDateDeN() {
+		return this.dateDeNProperty().getValue();
+	}
+	
+
+	public final void setDateDeN(final LocalDate dateDeN) {
+		this.dateDeNProperty().setValue(dateDeN);
+	}
+
+	public final StringProperty adresseProperty() {
+		return this.adresse;
+	}
+	
+
+	public final String getAdresse() {
+		return this.adresseProperty().get();
+	}
+	
+
+	public final void setAdresse(final String adresse) {
+		this.adresseProperty().set(adresse);
+	}
+	
+	
+
+	
+	
 	
 	
 
