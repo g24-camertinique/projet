@@ -30,6 +30,7 @@ public enum EnumView implements IEnumView {
 	
 	//Ce que nous avons rajouté pour notre projet
 	TestDaoBenevole		("test/ViewTestDaoBenevole.fxml" ),
+	TestDaoCategorie1	("test/ViewTestDaoCategorie1.fxml" ),
 	;
 
 	
