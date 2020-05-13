@@ -10,28 +10,27 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 
-public class Compte  {
+public class CompteA  {
 
 	
 	// Données observables
 	
 	private final Property<Integer>	id			= new SimpleObjectProperty<>();
-	private final StringProperty	pseudo		= new SimpleStringProperty();
+	private final StringProperty	login		= new SimpleStringProperty();
 	private final StringProperty	motDePasse	= new SimpleStringProperty();
-	private final StringProperty	email 		= new SimpleStringProperty();
-	private final ObservableList<String> roles = FXCollections.observableArrayList();
+	
 	
 	
 	// Constructeurs
 	
-	public Compte() {
+	public CompteA() {
 	}
 
-	public Compte( int id, String pseudo, String motDePasse, String email ) {
+	public CompteA( int id, String login, String motDePasse ) {
 		setId(id);
-		setPseudo(pseudo);
+		setlogin(login);
 		setMotDePasse(motDePasse);
-		setEmail(email);
+		
 	}
 	
 	
@@ -49,16 +48,16 @@ public class Compte  {
 		this.idProperty().setValue(id);
 	}
 
-	public final StringProperty pseudoProperty() {
-		return this.pseudo;
+	public final StringProperty loginProperty() {
+		return this.login;
 	}
 
-	public final String getPseudo() {
-		return this.pseudoProperty().getValue();
+	public final String getlogin() {
+		return this.loginProperty().getValue();
 	}
 
-	public final void setPseudo(final String pseudo) {
-		this.pseudoProperty().setValue(pseudo);
+	public final void setlogin(final String login) {
+		this.loginProperty().setValue(login);
 	}
 
 	public final StringProperty motDePasseProperty() {
@@ -73,41 +72,14 @@ public class Compte  {
 		this.motDePasseProperty().setValue(motDePasse);
 	}
 
-	public final StringProperty emailProperty() {
-		return this.email;
-	}
-
-	public final String getEmail() {
-		return this.emailProperty().getValue();
-	}
-
-	public final void setEmail(final String email) {
-		this.emailProperty().setValue(email);
-	}
-
-	public final ObservableList<String> getRoles() {
-		return this.roles;
-	}
-
 	
-	public boolean isInRole( String role ) {
-		
-		if ( role != null ) {
-			for ( String r : roles ) {
-				if ( role.equals( r ) ) {
-					return true;
-				}
-			}
-		}
-		return false;
-	}
 
 	
 	// toString()
 	
 	@Override
 	public String toString() {
-		return getPseudo();
+		return getlogin();
 	}
 	
 	
@@ -126,10 +98,8 @@ public class Compte  {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Compte other = (Compte) obj;
+		CompteA other = (CompteA) obj;
 		return Objects.equals(id.getValue(), other.id.getValue() );
 	}
-
-	
 	
 }
