@@ -36,7 +36,7 @@ public class DaoCandidat {
 		
 		try {
 			cn = dataSource.getConnection();
-			sql = "INSERT INTO candidat ( club, nom, prenom, datedenaissance, adresse, numtelephone, mail ) VALUES( ?, ?, ?, ?, ?, ?, ? ) ";
+			sql = "INSERT INTO candidat ( club, nom, prenom, dateden, adresse, numtelephone, mail ) VALUES( ?, ?, ?, ?, ?, ?, ? ) ";
 			stmt = cn.prepareStatement( sql, Statement.RETURN_GENERATED_KEYS );
 			stmt.setObject( 1, candidat.getClub() );
 			stmt.setObject( 2, candidat.getNom() );
@@ -46,14 +46,12 @@ public class DaoCandidat {
 			stmt.setObject( 6, candidat.getNumtelephone() );
 			stmt.setObject( 7, candidat.getMail() );
 			
+			stmt.executeUpdate();
 			
 			// Récupère l'identifiant généré par le SGBD
 			rs = stmt.getGeneratedKeys();
 			rs.next();
-			candidat.setIdCandidat( rs.getObject( 1, Integer.class) );
-			
-			insererConcerner(candidat );
-			
+			candidat.setIdCandidat( rs.getObject( 1, Integer.class) );			
 			return candidat.getIdCandidat();
 	
 		} catch ( SQLException e ) {
@@ -61,12 +59,6 @@ public class DaoCandidat {
 		} finally {
 			UtilJdbc.close( rs, stmt, cn );
 		}
-	}
-
-
-	private void insererConcerner(Candidat candidat) {
-		// TODO Auto-generated method stub
-		
 	}
 
 
@@ -134,12 +126,17 @@ public class DaoCandidat {
 			stmt.setInt(1, idCandidat);
 			rs = stmt.executeQuery();
 
+			if ( rs.next() ) {
+				return construireCandidat( rs);
+			} else {
+				return null;
+			}
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		} finally {
 			UtilJdbc.close( rs, stmt, cn );
 		}
-		return null;
+		//return null;
 	}
 
 
