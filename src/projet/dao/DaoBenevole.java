@@ -1,19 +1,23 @@
 package projet.dao;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLFeatureNotSupportedException;
 import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.inject.Inject;
 import javax.sql.DataSource;
 
 import jfox.dao.jdbc.UtilJdbc;
 import projet.data.Benevole;
+import projet.data.Compte;
 
 
 
@@ -196,5 +200,32 @@ public class DaoBenevole {
 		return benevole;
 	}
 
+ // appel de la procedure pour la modification de la validation
+	
+	
+	
+	public void modifierValidation( Benevole benevole )  {
 
+		Connection			cn		= null;
+		CallableStatement	stmt	= null;
+		String 				sql;
+
+		try {
+			cn = dataSource.getConnection();
+
+			// Modifie la validation de benevole 
+			sql = "{ CALL validation_modifier( ? ) } ";
+			stmt = cn.prepareCall( sql );
+			stmt.setObject( 1, benevole.getIdBenevole() );
+			stmt.setObject( 2, benevole.getValidation() );
+			
+			
+			stmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			UtilJdbc.close( stmt, cn );
+		}
+	}
 }
