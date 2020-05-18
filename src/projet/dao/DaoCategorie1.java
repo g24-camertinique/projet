@@ -65,6 +65,7 @@ public class DaoCategorie1 {
 			sql = "UPDATE categorie1 SET nomcategorie = ? WHERE idcategorie1 =  ?";
 			stmt = cn.prepareStatement( sql );
 			stmt.setObject( 1, categorie1.getNomCategorie() );
+			stmt.setObject( 2, categorie1.getIdCategorie1() );
 			stmt.executeUpdate();
 
 		} catch (SQLException e) {

@@ -79,7 +79,8 @@ public class DaoCandidat {
 			stmt.setObject( 5, candidat.getAdresse() );
 			stmt.setObject( 6, candidat.getNumtelephone() );
 			stmt.setObject( 7, candidat.getMail() );
-			
+			stmt.setObject( 8, candidat.getIdCandidat() );
+			stmt.executeUpdate();
 			
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
