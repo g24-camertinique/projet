@@ -204,7 +204,7 @@ public class DaoBenevole {
 	
 	
 	
-	public void modifierValidation( Benevole benevole )  {
+	public void modifierValidationBenevole( Benevole benevole )  {
 
 		Connection			cn		= null;
 		CallableStatement	stmt	= null;
@@ -214,10 +214,11 @@ public class DaoBenevole {
 			cn = dataSource.getConnection();
 
 			// Modifie la validation de benevole 
-			sql = "{ CALL validation_modifier( ? ) } ";
+			sql = "{ CALL validationBENEVOLE_modifier( ?,? ) } ";
 			stmt = cn.prepareCall( sql );
-			stmt.setObject( 1, benevole.getIdBenevole() );
-			stmt.setObject( 2, benevole.getValidation() );
+			
+			stmt.setObject( 1, benevole.getValidation() );
+			stmt.setObject( 2, benevole.getIdBenevole() );
 			
 			
 			stmt.executeUpdate();

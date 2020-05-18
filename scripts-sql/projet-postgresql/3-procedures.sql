@@ -175,9 +175,10 @@ $ccode$ LANGUAGE plpgsql;
 
 --  fonction pour la  MODIFICATION  de la validation de la table benevole
 
-CREATE FUNCTION validation_modifier(
-	p_validation 	BOOLEAN,
-	p_idbenevole		INT
+CREATE FUNCTION validationBENEVOLE_modifier(
+	
+	p_idbenevole		INT,
+	p_validation 	BOOLEAN
 ) 
 RETURNS VOID 
 AS $ccode$
@@ -186,5 +187,22 @@ BEGIN
 	SET validation = p_validation
 		
 	WHERE idbenevole =  p_idbenevole;
+END;
+$ccode$ LANGUAGE plpgsql;
+
+
+--  fonction pour la  MODIFICATION  de la validation de la table equipe
+CREATE FUNCTION validationEQUIPE_modifier(
+	
+	p_idequipe		INT,
+	p_validation 	BOOLEAN
+) 
+RETURNS VOID 
+AS $ccode$
+BEGIN
+	UPDATE benevole 
+	SET validation = p_validation
+		
+	WHERE idequipe =  p_idequipe;
 END;
 $ccode$ LANGUAGE plpgsql;

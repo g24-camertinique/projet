@@ -1,5 +1,6 @@
 package projet.dao;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,6 +14,7 @@ import javax.inject.Inject;
 import javax.sql.DataSource;
 
 import jfox.dao.jdbc.UtilJdbc;
+import projet.data.Benevole;
 import projet.data.Equipe;
 
 public class DaoEquipe {
@@ -180,4 +182,27 @@ public class DaoEquipe {
 		return equipe;
 	}
 
+	public void modifierValidationEquipe( Equipe equipe )  {
+
+		Connection			cn		= null;
+		CallableStatement	stmt	= null;
+		String 				sql;
+
+		try {
+			cn = dataSource.getConnection();
+
+			// Modifie la validation de benevole 
+			sql = "{ CALL validationEQUIPE_modifier( ?,? ) } ";
+			stmt = cn.prepareCall( sql );
+			stmt.setObject( 1, equipe.getIdEquipe() );
+			stmt.setObject( 2, equipe.getValidation() );
+						
+			stmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			UtilJdbc.close( stmt, cn );
+		}
+	}
 }
