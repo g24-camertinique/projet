@@ -91,7 +91,11 @@ public class MenuBarAppli extends MenuBar {
 		menu.getItems().add( item );
 		itemComptes = item;
 
-		
+		item = new MenuItem( "Candidats" );
+		item.setOnAction(  (e) -> managerGui.showView( EnumView.CandidatListe )  );
+		menu.getItems().add( item );
+		itemComptes = item;
+
 		// Manu Etats
 		
 		menu =  new Menu( "Etats" );;

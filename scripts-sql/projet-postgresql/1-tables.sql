@@ -126,7 +126,9 @@ CREATE TABLE equipe(
 	
 	PRIMARY KEY (idequipe),
 	FOREIGN KEY (idcategorie1) REFERENCES categorie1(idcategorie1),
-	FOREIGN KEY (idcourse) REFERENCES course(idcourse)
+	FOREIGN KEY (idcourse) REFERENCES course(idcourse), 
+	FOREIGN KEY (idcandidatcap) REFERENCES candidat(idcandidat),
+	FOREIGN KEY (idcandidateq) REFERENCES candidat(idcandidat)
 );
 
 

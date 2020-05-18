@@ -35,8 +35,9 @@ INSERT INTO compteA (idcompte, login, motdepasse ) VALUES
 INSERT INTO candidat (idcandidat, club, nom, prenom, dateden, adresse, numtelephone,
 mail) VALUES 
 (1, 'pao121', 'ngassie', 'sorelle','2008-04-06' , '189paris' , '05688452','sorelle@3il.fr' ),
-  (2, 'pao141', 'ngassie', 'sorelle','2008-04-06' , '189paris' , '05688452','sorelle@3il.fr' );
-ALTER TABLE candidat ALTER COLUMN idcandidat RESTART WITH 3;
+(2, 'pao141', 'ngassie2', 'sorelle','2008-04-06' , '189paris' , '05688452','sorelle@3il.fr' ),
+(3, 'club1', 'retory', 'amanda','2008-04-06' , '189paris' , '05688452','sorelle@3il.fr' );
+ALTER TABLE candidat ALTER COLUMN idcandidat RESTART WITH 4;
   
 -- benevoles
 
