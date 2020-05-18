@@ -17,52 +17,36 @@ public class Equipe  {
 	
 	// Données observables
 	
-	private final Property<Integer>		id					= new SimpleObjectProperty<>();
-	private final StringProperty		nomE					= new SimpleStringProperty();
-	private final Property<Integer>		nmbreRepas			= new SimpleObjectProperty<>();
+	private final Property<Integer>		idEquipe			= new SimpleObjectProperty<>();
+	private final StringProperty		nom					= new SimpleStringProperty();
+	private final Property<Integer>		nbreRepas			= new SimpleObjectProperty<>();
 	private final Property<Boolean>		validation			= new SimpleObjectProperty<>( false );
 	private final Property<LocalDate>	dateInscriptionE	= new SimpleObjectProperty<>();
-	private final Property<Integer>		id_Categorie		= new SimpleObjectProperty<>();
-	private final Property<Integer>		id_Course			= new SimpleObjectProperty<>();
+	private final Property<Integer>		idCompte			= new SimpleObjectProperty<>();
+	private final Property<Integer>		idCourse			= new SimpleObjectProperty<>();
+	private final Property<Integer>		idCategorie1		= new SimpleObjectProperty<>();
+	private final Property<Integer>		idCandidatCap		= new SimpleObjectProperty<>();
+	private final Property<Integer>		idCandidatEq		= new SimpleObjectProperty<>();
 	
 	
-	
-	
-	
-	// Constructeurs
-	
-	public Equipe() {
-	}
-
-	public Equipe( final int id,final String nom,final int nmbreRepas,final boolean validation,final LocalDate dateInscriptionE,final int id_Categorie,final int id_Course   ) {
-		setId(id);
-		setNom(nom);
-		setNmbreRepas(nmbreRepas);
-		setValidation(validation);
-		setDateInscriptionE(dateInscriptionE);
-		setId_Categorie(id_Categorie);
-		setId_Course(id_Course);
-	}
-	
-	
-	// Getters et Setters
-	public final Property<Integer> idProperty() {
-		return this.id;
+	//Getters & setters
+	public final Property<Integer> idEquipeProperty() {
+		return this.idEquipe;
 	}
 	
 
-	public final Integer getId() {
-		return this.idProperty().getValue();
+	public final Integer getIdEquipe() {
+		return this.idEquipeProperty().getValue();
 	}
 	
 
-	public final void setId(final Integer id) {
-		this.idProperty().setValue(id);
+	public final void setIdEquipe(final Integer idEquipe) {
+		this.idEquipeProperty().setValue(idEquipe);
 	}
 	
 
 	public final StringProperty nomProperty() {
-		return this.nomE;
+		return this.nom;
 	}
 	
 
@@ -76,18 +60,18 @@ public class Equipe  {
 	}
 	
 
-	public final Property<Integer> nmbreRepasProperty() {
-		return this.nmbreRepas;
+	public final Property<Integer> nbreRepasProperty() {
+		return this.nbreRepas;
 	}
 	
 
-	public final Integer getNmbreRepas() {
-		return this.nmbreRepasProperty().getValue();
+	public final Integer getNbreRepas() {
+		return this.nbreRepasProperty().getValue();
 	}
 	
 
-	public final void setNmbreRepas(final Integer nmbreRepas) {
-		this.nmbreRepasProperty().setValue(nmbreRepas);
+	public final void setNbreRepas(final Integer nbreRepas) {
+		this.nbreRepasProperty().setValue(nbreRepas);
 	}
 	
 
@@ -121,41 +105,78 @@ public class Equipe  {
 	}
 	
 
-	public final Property<Integer> id_CategorieProperty() {
-		return this.id_Categorie;
+	public final Property<Integer> idCompteProperty() {
+		return this.idCompte;
 	}
 	
 
-	public final Integer getId_Categorie() {
-		return this.id_CategorieProperty().getValue();
+	public final Integer getIdCompte() {
+		return this.idCompteProperty().getValue();
 	}
 	
 
-	public final void setId_Categorie(final Integer id_Categorie) {
-		this.id_CategorieProperty().setValue(id_Categorie);
+	public final void setIdCompte(final Integer idCompte) {
+		this.idCompteProperty().setValue(idCompte);
 	}
 	
 
-	public final Property<Integer> id_CourseProperty() {
-		return this.id_Course;
+	public final Property<Integer> idCourseProperty() {
+		return this.idCourse;
 	}
 	
 
-	public final Integer getId_Course() {
-		return this.id_CourseProperty().getValue();
+	public final Integer getIdCourse() {
+		return this.idCourseProperty().getValue();
 	}
 	
 
-	public final void setId_Course(final Integer id_Course) {
-		this.id_CourseProperty().setValue(id_Course);
+	public final void setIdCourse(final Integer idCourse) {
+		this.idCourseProperty().setValue(idCourse);
 	}
+	
 
+	public final Property<Integer> idCategorie1Property() {
+		return this.idCategorie1;
+	}
 	
-	// toString()
+
+	public final Integer getIdCategorie1() {
+		return this.idCategorie1Property().getValue();
+	}
 	
-	@Override
-	public String toString() {
-		return getNom();
+
+	public final void setIdCategorie1(final Integer idCategorie1) {
+		this.idCategorie1Property().setValue(idCategorie1);
+	}
+	
+
+	public final Property<Integer> idCandidatCapProperty() {
+		return this.idCandidatCap;
+	}
+	
+
+	public final Integer getIdCandidatCap() {
+		return this.idCandidatCapProperty().getValue();
+	}
+	
+
+	public final void setIdCandidatCap(final Integer idCandidatCap) {
+		this.idCandidatCapProperty().setValue(idCandidatCap);
+	}
+	
+
+	public final Property<Integer> idCandidatEqProperty() {
+		return this.idCandidatEq;
+	}
+	
+
+	public final Integer getIdCandidatEq() {
+		return this.idCandidatEqProperty().getValue();
+	}
+	
+
+	public final void setIdCandidatEq(final Integer idCandidatEq) {
+		this.idCandidatEqProperty().setValue(idCandidatEq);
 	}
 	
 	
@@ -163,7 +184,7 @@ public class Equipe  {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id.getValue() );
+		return Objects.hash(idEquipe.getValue() );
 	}
 
 	@Override
@@ -175,8 +196,11 @@ public class Equipe  {
 		if (getClass() != obj.getClass())
 			return false;
 		Equipe other = (Equipe) obj;
-		return Objects.equals(id.getValue(), other.id.getValue() );
+		return Objects.equals(idEquipe.getValue(), other.idEquipe.getValue() );
 	}
+
+	
+	
 
 	
 	

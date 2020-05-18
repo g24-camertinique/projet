@@ -80,7 +80,7 @@ INSERT INTO document (iddocument, libelle, idcandidat ) VALUES
  
 -- equipes
 INSERT INTO equipe (idequipe, nom, nbrerepas, validation, dateinscriptione, idcompte, idcourse, idcategorie1, idcandidatcap, idcandidateq) VALUES 
-  
+  (1, 'team1', 10, 'false', '2015-01-02', 1, 1, 1, 1, 2),
   (2, 'team2', 14, 'true','2017-02-05' , 3, 1,1,1,2);
    ALTER TABLE equipe ALTER COLUMN idequipe RESTART WITH 3;
   

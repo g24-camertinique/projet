@@ -154,6 +154,11 @@ public class MenuBarAppli extends MenuBar {
 		item = new MenuItem( "DaoCategorie1" );
 		item.setOnAction(  (e) -> managerGui.showView( EnumView.TestDaoCategorie1 )  );
 		menu.getItems().add( item );
+		
+		item = new MenuItem( "DaoEquipe" );
+		item.setOnAction(  (e) -> managerGui.showView( EnumView.TestDaoEquipe )  );
+		menu.getItems().add( item );
+
 
 		// Configuration initiale du menu
 		configurerMenu( modelConnexion.getCompteActif() );

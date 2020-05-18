@@ -33,22 +33,25 @@ public class DaoEquipe {
 
 		try {
 			cn = dataSource.getConnection();
-			sql = "INSERT INTO equipe ( nom,nmbreRepas,validation,dateInscriptionE,id_Categorie,id_Course ) VALUES( ?,?,?,?,?,? ) ";
+			sql = "INSERT INTO equipe ( nom, nbreRepas, validation, dateinscriptione, idcompte, idcourse, idcategorie1, idcandidatcap, idcandidateq ) VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ? ) ";
 			stmt = cn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			stmt.setObject(1, equipe.getNom());
-			stmt.setObject(2, equipe.getValidation());
-			stmt.setObject(3, equipe.getNmbreRepas());
+			stmt.setObject(2, equipe.getNbreRepas());
+			stmt.setObject(3, equipe.getValidation());
 			stmt.setObject(4, equipe.getDateInscriptionE());
-			stmt.setObject(5, equipe.getId_Categorie());
-			stmt.setObject(6, equipe.getId_Course());
+			stmt.setObject(5, equipe.getIdCompte());
+			stmt.setObject(6, equipe.getIdCourse());
+			stmt.setObject(7, equipe.getIdCategorie1());
+			stmt.setObject(8, equipe.getIdCandidatCap());
+			stmt.setObject(9, equipe.getIdCandidatEq());
 			stmt.executeUpdate();
 
 			// Récupère l'identifiant généré par le SGBD
 			rs = stmt.getGeneratedKeys();
 			rs.next();
-			equipe.setId(rs.getObject(1, Integer.class));
+			equipe.setIdEquipe(rs.getObject(1, Integer.class));
 
-			return equipe.getId();
+			return equipe.getIdEquipe();
 
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -66,15 +69,18 @@ public class DaoEquipe {
 		try {
 
 			cn = dataSource.getConnection();
-			sql = "UPDATE equipe SET nom = ? ,nmbreRepas=?,validation=?,dateInscriptionE=?,id_Categorie=?,id_Course=?  WHERE idequipe =  ?";
+			sql = "UPDATE equipe SET nom=?, nbreRepas=?, validation=?, dateinscriptione=?, idcompte=?, idcourse=?, idcategorie1=?, idcandidatcap=?, idcandidateq=?  WHERE idequipe =  ?";
 			stmt = cn.prepareStatement(sql);
 			stmt.setObject(1, equipe.getNom());
-			stmt.setObject(2, equipe.getValidation());
-			stmt.setObject(3, equipe.getNmbreRepas());
+			stmt.setObject(2, equipe.getNbreRepas());
+			stmt.setObject(3, equipe.getValidation());
 			stmt.setObject(4, equipe.getDateInscriptionE());
-			stmt.setObject(5, equipe.getId_Categorie());
-			stmt.setObject(6, equipe.getId_Course());
-			stmt.setObject(7, equipe.getId());
+			stmt.setObject(5, equipe.getIdCompte());
+			stmt.setObject(6, equipe.getIdCourse());
+			stmt.setObject(7, equipe.getIdCategorie1());
+			stmt.setObject(8, equipe.getIdCandidatCap());
+			stmt.setObject(9, equipe.getIdCandidatEq());
+			stmt.setObject(10, equipe.getIdEquipe());
 			stmt.executeUpdate();
 
 		} catch (SQLException e) {
@@ -160,13 +166,16 @@ public class DaoEquipe {
 
 	private Equipe construireEquipe(ResultSet rs) throws SQLException {
 		Equipe equipe = new Equipe();
-		equipe.setId(rs.getObject("idequipe", Integer.class));
+		equipe.setIdEquipe(rs.getObject("idequipe", Integer.class));
 		equipe.setNom(rs.getObject("nom", String.class));
-		equipe.setNmbreRepas(rs.getObject("nmbreRepas", Integer.class));
-		equipe.setValidation(rs.getObject("validation", boolean.class));
+		equipe.setNbreRepas(rs.getObject("nbreRepas", Integer.class));
+		equipe.setValidation(rs.getObject("validation", Boolean.class));
 		equipe.setDateInscriptionE(rs.getObject("dateInscriptionE", LocalDate.class));
-		equipe.setId_Categorie(rs.getObject("id_categorie", Integer.class));
-		equipe.setId_Course(rs.getObject("id_Course", Integer.class));
+		equipe.setIdCompte(rs.getObject("idcompte", Integer.class));
+		equipe.setIdCourse(rs.getObject("idcourse", Integer.class));
+		equipe.setIdCategorie1(rs.getObject("idcategorie1", Integer.class));
+		equipe.setIdCandidatCap(rs.getObject("idcandidatcap", Integer.class));
+		equipe.setIdCandidatEq(rs.getObject("idcandidateq", Integer.class));
 
 		return equipe;
 	}
