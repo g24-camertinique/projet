@@ -94,6 +94,8 @@ public class ControllerCandidatForm {
 		// Adresse
 		textAreaAdresse.textProperty().bindBidirectional( courant.adresseProperty() );
 
+		// Mail
+		textFieldClub.textProperty().bindBidirectional( courant.mailProperty() );
 	
 		
 //		// Schéma
