@@ -1,22 +1,42 @@
 
 .titre-vue {
-    -fx-font-size: 20;
-    -fx-font-family: Arial;
+    -fx-font-size: 30;
+    -fx-font-family: "Century Gothic";
     -fx-font-weight: bold;
-    -fx-text-fill: #1e46e8;
+    -fx-text-fill: #000080;
 }
 
 
 .message-accueil {
-    -fx-background-color: cornsilk;
+    -fx-background-color: azure;
     -fx-padding: 10;
-    -fx-border-color: gray; 
+    -fx-border-color: cornflowerblue; 
     -fx-border-width: 1;
-    -fx-font-size: 16;
+    -fx-font-size: 18;
+    -fx-font-family: "Century Gothic";
 }
 
 
 .fond-d-ecran {
-	-fx-background-image: url("sao_landscape.jpg");
+	-fx-background-image: url("background.jpg");
 	-fx-background-position: center center;
+	-fx-font-family: "Century Gothic";
+	-fx-font-size: 16;
 }
+
+.liste {
+	-fx-font-size: 14;
+}
+
+.tab-pane {
+	-fx-background-color: whitesmoke;
+	-fx-font-family: "Century Gothic";
+	-fx-font-size: 16;
+}
+
+.tab-pane .tab-header-background {
+	-fx-background-color: mintcream;
+	-fx-border-color: lightgray; 
+}
+
+

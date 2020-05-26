@@ -28,7 +28,7 @@ public class ControllerCandidatForm {
 	@FXML
 	private TextField		textFieldPrenom;
 	@FXML
-	private DatePicker		datePicherDdn;
+	private DatePicker		datePickerDdn;
 	@FXML
 	private TextField		textFieldClub;
 	
@@ -82,7 +82,7 @@ public class ControllerCandidatForm {
 		// Date de naissance
 //		datePicherEcheance.getEditor().textProperty().bindBidirectional( courant.echeanceProperty(), new ConverterStringLocalDate() );
 //		datePicherEcheance.getEditor().focusedProperty().addListener(new ListenerFocusValidation( courant.echeanceProperty())  );
-		UtilFX.bindBidirectional( datePicherDdn.getEditor(), courant.dateDeNProperty(), new ConverterStringLocalDate() );
+		UtilFX.bindBidirectional( datePickerDdn.getEditor(), courant.dateDeNProperty(), new ConverterStringLocalDate() );
 		
 		// Club
 		textFieldClub.textProperty().bindBidirectional( courant.clubProperty() );
@@ -179,7 +179,7 @@ public class ControllerCandidatForm {
 		UtilFX.checkParseError( textFieldNom, courant.nomProperty() );
 		UtilFX.checkParseError( textFieldClub, courant.clubProperty() );
 		UtilFX.checkParseError( textFieldPrenom, courant.prenomProperty() );
-		UtilFX.checkParseError( datePicherDdn.getEditor(), courant.dateDeNProperty() );
+		UtilFX.checkParseError( datePickerDdn.getEditor(), courant.dateDeNProperty() );
 		UtilFX.checkParseError( textFieldMail, courant.mailProperty() );
 	}
 }
