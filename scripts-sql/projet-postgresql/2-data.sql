@@ -10,6 +10,7 @@ DELETE FROM personne;
 DELETE FROM categorie;
 DELETE FROM role;
 DELETE FROM compte;
+--nos tables
 DELETE FROM candidat;
 DELETE FROM benevole;
 DELETE FROM poste;
@@ -49,9 +50,18 @@ ALTER TABLE benevole ALTER COLUMN idbenevole RESTART WITH 3;
 -- poste
  
 INSERT INTO poste (idposte, libelle, heuredebut, heurefin, nbrbenevoles, types) VALUES 
-  (1, 'benevole externe', '11:01:32', '12:04:54',5 , 'libre'),
-   (2, 'benevole interne', '11:08:32', '12:04:58',6 , 'libre');
- ALTER TABLE poste ALTER COLUMN idposte RESTART WITH 3;
+  (1, 'parking voiture velo', '07:00:00', '09:00:00', 2, 'M'),
+  (2, 'remise des dossards', '07:00:00', '09:00:00', 4, 'M'),
+  (3, 'signaleur', '08:30:00', '13:30:00', 37, 'M et E'),
+  (4, 'ravitaillement', '09:00:00', '13:00:00', 6, 'M et E'),
+  (5, 'securite sur eau', '09:00:00', '10:30:00', 6, 'M'),
+  (6, 'Chronometrage', '09:30:00', '13:30:00', 3, 'M et E'),
+  (7, 'moto fermeture', '09:00:00', '13:30:00', 2, 'libre'),
+  (8, 'buvette', '07:00:00', '15:00:00', 5, 'libre'),
+  (9, 'repas', '11:00:00', '14:00:00', 3, 'E'),
+  (10, 'recuperer dossards et puces', '12:00:00', '13:30:00', 1, 'M'),
+  (11, 'photographe', '07:00:00', '14:00:00', 2, 'libre');
+ ALTER TABLE poste ALTER COLUMN idposte RESTART WITH 12;
   
   --  etre_affecte_au
 
@@ -95,7 +105,7 @@ INSERT INTO equipe (idequipe, nom, nbrerepas, validation, dateinscriptione, idco
 
 
 
-
+--Anciennes insertions
   
 -- Compte
 INSERT INTO compte (idcompte, pseudo, motdepasse, email ) VALUES 
