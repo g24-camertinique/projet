@@ -4,6 +4,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 
+import projet.data.Benevole;
 import projet.data.Candidat;
 import projet.data.Categorie;
 import projet.data.Compte;
@@ -29,4 +30,5 @@ public interface IMapper {
 	
 	//Ajoutés pour notre projet
 	Candidat update(@MappingTarget Candidat target, Candidat source );
+	Benevole update(@MappingTarget Benevole target, Benevole source );
 }
