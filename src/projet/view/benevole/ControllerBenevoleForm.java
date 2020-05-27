@@ -7,6 +7,8 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import jfox.javafx.util.ConverterStringInteger;
 import jfox.javafx.util.ConverterStringLocalDate;
 import jfox.javafx.util.UtilFX;
@@ -26,6 +28,8 @@ public class ControllerBenevoleForm {
 	
 	@FXML
 	private TextField		textFieldIdCompte;
+	@FXML
+	private ImageView		imageLogo;
 	
 	//Infos
 	@FXML
@@ -75,6 +79,9 @@ public class ControllerBenevoleForm {
 		
 		
 		Benevole courant = modelBenevole.getCourant();
+
+		Image image = new Image("projet/view/icone.png");
+		imageLogo.setImage(image);
 		
 		// id
 		textFieldId.textProperty().bindBidirectional( courant.idBenevoleProperty(), new ConverterStringInteger()  );

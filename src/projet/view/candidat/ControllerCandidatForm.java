@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import jfox.javafx.util.ConverterStringInteger;
 import jfox.javafx.util.ConverterStringLocalDate;
 import jfox.javafx.util.UtilFX;
@@ -21,6 +23,8 @@ public class ControllerCandidatForm {
 	
 	@FXML
 	private TextField		textFieldId;
+	@FXML
+	private ImageView		imageLogo;
 	
 	//Infos
 	@FXML
@@ -72,6 +76,8 @@ public class ControllerCandidatForm {
 		// id
 		textFieldId.textProperty().bindBidirectional( courant.idCandidatProperty(), new ConverterStringInteger()  );
 	
+		Image image = new Image("projet/view/icone.png");
+		imageLogo.setImage(image);
 	//infos
 		// Nom
 		textFieldNom.textProperty().bindBidirectional( courant.nomProperty() );

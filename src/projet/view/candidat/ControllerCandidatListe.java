@@ -5,6 +5,8 @@ import javax.inject.Inject;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import jfox.javafx.util.UtilFX;
@@ -24,7 +26,8 @@ public class ControllerCandidatListe {
 	private Button				buttonModifier;
 	@FXML
 	private Button				buttonSupprimer;
-
+	@FXML
+	private ImageView		imageLogo;
 
 	// Autres champs
 	
@@ -43,6 +46,9 @@ public class ControllerCandidatListe {
 		listView.setItems( modelCandidat.getListe() );
 		
 		listView.setCellFactory(  UtilFX.cellFactory( item -> item.getNom() ));
+		
+		Image image = new Image("projet/view/icone.png");
+		imageLogo.setImage(image);
 		
 		// Configuraiton des boutons
 		listView.getSelectionModel().selectedItemProperty().addListener(

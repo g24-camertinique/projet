@@ -15,6 +15,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.CheckBoxListCell;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import jfox.javafx.util.ConverterStringInteger;
 import jfox.javafx.view.IManagerGui;
 import projet.commun.Roles;
@@ -37,7 +39,6 @@ public class ControllerCompteForm {
 	private TextField			textFieldEmail;
 	@FXML
 	private ListView<ItemRole>	listViewRoles;
-
 	
 	// Autres champs
 

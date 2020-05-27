@@ -4,6 +4,8 @@ import javax.inject.Inject;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 
 public class ControllerInfo {
@@ -15,7 +17,8 @@ public class ControllerInfo {
 	private Label		labelTitre;
 	@FXML
 	private Label		labelMessage;
-
+	@FXML
+	private ImageView		imageLogo;
 	
 	// Autres champs
 	
@@ -32,6 +35,8 @@ public class ControllerInfo {
 		labelTitre.textProperty().bind( modelInfo.titreProperty() );
 		labelMessage.textProperty().bind( modelInfo.messageProperty() );
 		
+		Image image = new Image("projet/view/icone.png");
+		imageLogo.setImage(image);
 	}
 	
 
