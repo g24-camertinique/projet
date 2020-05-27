@@ -21,7 +21,7 @@ public class Equipe  {
 	private final StringProperty		nom					= new SimpleStringProperty();
 	private final Property<Integer>		nbreRepas			= new SimpleObjectProperty<>();
 	private final Property<Boolean>		validation			= new SimpleObjectProperty<>( false );
-	private final Property<LocalDate>	dateInscriptionE	= new SimpleObjectProperty<>();
+	private final Property<LocalDate>	dateInscriptionE	= new SimpleObjectProperty<>(LocalDate.now());
 	private final Property<Integer>		idCompte			= new SimpleObjectProperty<>();
 	private final Property<Integer>		idCourse			= new SimpleObjectProperty<>();
 	private final Property<Integer>		idCategorie1		= new SimpleObjectProperty<>();

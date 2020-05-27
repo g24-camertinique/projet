@@ -30,16 +30,17 @@ public enum EnumView implements IEnumView {
 	
 	//Ce que nous avons rajouté pour notre projet
 	TestDaoBenevole		("test/ViewTestDaoBenevole.fxml" ),
-	
+	BenevoleForm	( "benevole/ViewBenevoleForm.fxml" ),
+	BenevoleListe	( "benevole/ViewBenevoleListe.fxml" ),
 	TestDaoCandidat	("test/ViewTestDaoCandidat.fxml" ),
 	CandidatListe	( "candidat/ViewCandidatListe.fxml" ),
 	CandidatForm	( "candidat/ViewCandidatForm.fxml" ),
-	BenevoleForm	( "benevole/ViewBenevoleForm.fxml" ),
-	BenevoleListe	( "benevole/ViewBenevoleListe.fxml" ),
 	TestDaoCategorie1	("test/ViewTestDaoCategorie1.fxml" ),
 	
 	TestDaoEquipe	("test/ViewTestDaoEquipe.fxml" ),
-	
+	EquipeForm	( "equipe/ViewEquipeForm.fxml" ),
+	EquipeListe	( "equipe/ViewEquipeListe.fxml" ),
+
 	;
 
 	

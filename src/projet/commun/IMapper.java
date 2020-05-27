@@ -8,6 +8,7 @@ import projet.data.Benevole;
 import projet.data.Candidat;
 import projet.data.Categorie;
 import projet.data.Compte;
+import projet.data.Equipe;
 import projet.data.Memo;
 import projet.data.Personne;
 import projet.data.Service;
@@ -31,4 +32,5 @@ public interface IMapper {
 	//Ajoutés pour notre projet
 	Candidat update(@MappingTarget Candidat target, Candidat source );
 	Benevole update(@MappingTarget Benevole target, Benevole source );
+	Equipe update(@MappingTarget Equipe target, Equipe source );
 }
