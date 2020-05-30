@@ -18,7 +18,7 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="1000.0" styleClass="fond-d-ecran" xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projet.view.systeme.ControllerConnexion">
    <children>
-      <Label alignment="CENTER" layoutX="349.0" layoutY="41.0" styleClass="titre-vue" text="Gestion de Contacts">
+      <Label alignment="CENTER" layoutX="349.0" layoutY="41.0" styleClass="titre-vue" text="Gestion du Bol d'Air">
          <font>
             <Font name="Century Gothic" size="30.0" />
          </font>
