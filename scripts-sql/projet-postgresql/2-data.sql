@@ -78,14 +78,16 @@ INSERT INTO document (iddocument, libelle, idcandidat ) VALUES
  
   -- categorie1
   INSERT INTO categorie1 (idcategorie1, nomcategorie) VALUES 
-  (1, 'categorie1'),
-  (2, 'categorie2');
-   ALTER TABLE categorie1 ALTER COLUMN idcategorie1 RESTART WITH 3;
+  (1, 'hommes'),
+  (2, 'femmes'),
+  (3, 'mixtes'),
+  (4, 'vae');
+   ALTER TABLE categorie1 ALTER COLUMN idcategorie1 RESTART WITH 5;
 
   --course
    INSERT INTO course (idcourse, nom, datecourse) VALUES 
-  (1, 'course1', '2014-08-04'),
-  (2, 'course2', '2011-08-04');
+  (1, 'bol d air', '2014-08-04'),
+  (2, 'mini bol d air', '2011-08-04');
    ALTER TABLE course ALTER COLUMN idcourse RESTART WITH 3;
 
  
