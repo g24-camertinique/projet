@@ -2,24 +2,23 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="paneRoot" prefHeight="500.0" prefWidth="1000.0" styleClass="fond-d-ecran" xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projet.view.candidat.ControllerCandidatForm">
+<fx:root fx:id="paneRoot" prefHeight="500.0" prefWidth="1000.0" styleClass="fond-d-ecran" type="AnchorPane" xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projet.view.equipe.ControllerEquipeForm">
    <children>
-      <Label alignment="CENTER" styleClass="titre-vue" text="Candidat" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+      <Label alignment="CENTER" styleClass="titre-vue" text="Équipe" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
          <font>
             <Font name="Century Gothic" size="12.0" />
          </font></Label>
@@ -46,7 +45,7 @@
             </GridPane>
          </children>
       </HBox>
-      <HBox alignment="CENTER" layoutX="59.0" layoutY="125.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="110.0">
+      <HBox alignment="CENTER" layoutY="115.0" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="115.0">
          <children>
             <TabPane prefWidth="500.0" style="-fx-border-color: lightgray;" styleClass="jfx-tab-pane">
                <tabs>
@@ -64,28 +63,35 @@
                                     <RowConstraints minHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
                                     <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
                                     <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
                                  </rowConstraints>
                                  <children>
                                     <Label text="Nom :">
                                        <padding>
                                           <Insets right="10.0" />
                                        </padding></Label>
-                                    <TextField fx:id="textFieldPrenom" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                    <DatePicker fx:id="datePickerDdn" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                    <Label text="Prénom :" GridPane.rowIndex="1">
+                                    <TextField fx:id="textFieldCapitaine" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Label text="Capitaine :" GridPane.rowIndex="1">
                                        <padding>
                                           <Insets right="10.0" />
                                        </padding></Label>
-                                    <Label text="Date de naissance :" GridPane.rowIndex="2">
+                                    <Label text="Équipier" GridPane.rowIndex="2">
                                        <padding>
                                           <Insets right="10.0" />
                                        </padding></Label>
-                                    <Label text="Club :" GridPane.rowIndex="3">
+                                    <Label text="Catégorie" GridPane.rowIndex="4">
                                        <padding>
                                           <Insets right="10.0" />
                                        </padding></Label>
                                     <TextField fx:id="textFieldNom" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" GridPane.columnIndex="1" />
-                                    <TextField fx:id="textFieldClub" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <TextField fx:id="textFieldEquipier" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <Label text="Date d'inscription" GridPane.rowIndex="3">
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <DatePicker fx:id="datePicherInscription" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <TextField fx:id="textFieldCategorie" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                                  </children>
                                  <padding>
                                     <Insets left="5.0" right="5.0" />
@@ -99,7 +105,7 @@
                     <content>
                       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="500.0">
                            <children>
-                              <GridPane alignment="CENTER" layoutY="42.0" prefHeight="150.0" prefWidth="450.0" AnchorPane.topAnchor="75.0">
+                              <GridPane alignment="CENTER" layoutX="24.0" layoutY="75.0" prefHeight="150.0" prefWidth="450.0" AnchorPane.topAnchor="75.0">
                                 <columnConstraints>
                                   <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="-Infinity" prefWidth="200.0" />
                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" prefWidth="250.0" />
@@ -110,44 +116,28 @@
                                     <RowConstraints maxHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <Label text="Téléphone :">
+                                    <Label text="Nombre de Repas :">
                                        <padding>
                                           <Insets right="10.0" />
                                        </padding></Label>
-                                    <TextField fx:id="textFieldTelephone" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                    <TextField fx:id="textFieldNbrRepas" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" GridPane.columnIndex="1">
                                        <padding>
                                           <Insets left="10.0" right="10.0" />
                                        </padding>
                                     </TextField>
-                                    <Label text="Adresse :" GridPane.rowIndex="1">
+                                    <Label text="Id Compte :" GridPane.rowIndex="1">
                                        <padding>
                                           <Insets right="10.0" />
                                        </padding></Label>
-                                    <TextField fx:id="textFieldMail" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                    <Label text="Mail :" GridPane.rowIndex="2">
+                                    <Label text="Validation" GridPane.rowIndex="2">
                                        <padding>
                                           <Insets right="10.0" />
                                        </padding></Label>
-                                    <TextArea fx:id="textAreaAdresse" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextArea fx:id="textFieldIdCompte" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <CheckBox fx:id="checkBoxValidation" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                                  </children>
                               </GridPane>
                            </children></AnchorPane>
-                    </content>
-                  </Tab>
-                  <Tab closable="false" text="Documents">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                           <children>
-                              <ImageView fitHeight="161.0" fitWidth="200.0" layoutX="40.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="110.39999999999998" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="258.4" AnchorPane.topAnchor="27.0" />
-                              <VBox alignment="CENTER" layoutX="205.0" layoutY="-13.0" prefHeight="174.0" prefWidth="100.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <children>
-                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="Choisir" />
-                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="Ouvrir" />
-                                    <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="Suppr." />
-                                 </children>
-                              </VBox>
-                           </children>
-                        </AnchorPane>
                     </content>
                   </Tab>
                </tabs>
@@ -159,15 +149,15 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="60.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Button defaultButton="true" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#doValider" prefHeight="30.0" prefWidth="60.0" text="OK">
+            <Button fx:id="buttonOkay" defaultButton="true" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#doValider" prefHeight="30.0" prefWidth="60.0" text="OK">
                <font>
                		<Font name="Century Gothic" size="16.0" />
                </font></Button>
-            <Button cancelButton="true" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#doAnnuler" prefHeight="30.0" prefWidth="90.0" text="Annuler">
+            <Button fx:id="buttonAnnuler" cancelButton="true" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#doAnnuler" prefHeight="30.0" prefWidth="90.0" text="Annuler">
                <font>
                   <Font name="Century Gothic" size="16.0" />
                </font></Button>
          </children>
       </HBox>
    </children>
-</AnchorPane>
+</fx:root>
