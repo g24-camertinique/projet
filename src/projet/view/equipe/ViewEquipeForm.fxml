@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<fx:root fx:id="paneRoot" prefHeight="500.0" prefWidth="1000.0" styleClass="fond-d-ecran" type="AnchorPane" xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projet.view.equipe.ControllerEquipeForm">
+<AnchorPane fx:id="paneRoot" prefHeight="500.0" prefWidth="1000.0" styleClass="fond-d-ecran" xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projet.view.equipe.ControllerEquipeForm">
    <children>
       <Label alignment="CENTER" styleClass="titre-vue" text="Équipe" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
          <font>
@@ -160,4 +160,4 @@
          </children>
       </HBox>
    </children>
-</fx:root>
+</AnchorPane>
