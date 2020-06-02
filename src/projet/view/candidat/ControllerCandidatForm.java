@@ -183,7 +183,6 @@ public class ControllerCandidatForm {
 	private void verifierValiditeSaisie() {
 		Candidat courant = modelCandidat.getCourant();
 		UtilFX.checkParseError( textFieldNom, courant.nomProperty() );
-		UtilFX.checkParseError( textFieldClub, courant.clubProperty() );
 		UtilFX.checkParseError( textFieldPrenom, courant.prenomProperty() );
 		UtilFX.checkParseError( datePickerDdn.getEditor(), courant.dateDeNProperty() );
 		UtilFX.checkParseError( textFieldMail, courant.mailProperty() );

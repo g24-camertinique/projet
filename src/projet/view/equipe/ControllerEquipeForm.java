@@ -1,38 +1,16 @@
 package projet.view.equipe;
 
-import java.awt.Desktop;
-import java.io.File;
-import java.io.IOException;
-
 import javax.inject.Inject;
 
-import javafx.beans.binding.Bindings;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.ListView;
-import javafx.scene.control.SelectionMode;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Toggle;
-import javafx.scene.control.ToggleGroup;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
-import javafx.stage.FileChooser;
-import jfox.javafx.util.ConverterStringDouble;
 import jfox.javafx.util.ConverterStringInteger;
 import jfox.javafx.util.ConverterStringLocalDate;
 import jfox.javafx.util.UtilFX;
 import jfox.javafx.view.IManagerGui;
-import projet.data.Categorie;
 import projet.data.Equipe;
-import projet.data.Memo;
-import projet.data.Personne;
 import projet.view.EnumView;
 
 
@@ -50,9 +28,11 @@ public class ControllerEquipeForm {
 	@FXML
 	private TextField		textFieldEquipier;
 	@FXML
-	private DatePicker		datePicherInscription;
+	private DatePicker		datePickerInscription;
 	@FXML
 	private TextField		textFieldCategorie;
+	@FXML 
+	private TextField		textFieldCourse;
 	
 	//Info
 	@FXML
@@ -61,11 +41,6 @@ public class ControllerEquipeForm {
 	private TextField		textFieldIdCompte;
 	@FXML
 	private CheckBox		checkBoxValidation;
-	//Button
-	@FXML
-	private Button			buttonOkay;
-	@FXML
-	private Button			buttonAnnuler;
 	
 
 	// Autres champs
@@ -94,19 +69,21 @@ public class ControllerEquipeForm {
 		textFieldNom.textProperty().bindBidirectional( courant.nomProperty() );
 		
 		//Capitaine
-		textFieldNom.textProperty().bindBidirectional( courant.nomProperty() );
+		textFieldCapitaine.textProperty().bindBidirectional( courant.idCandidatCapProperty(), new ConverterStringInteger() );
 		//Équipier
-		textFieldNom.textProperty().bindBidirectional( courant.nomProperty() );
+		textFieldEquipier.textProperty().bindBidirectional( courant.idCandidatEqProperty(), new ConverterStringInteger() );
 		// Date inscription
-		UtilFX.bindBidirectional( datePicherInscription.getEditor(), courant.dateInscriptionEProperty(), new ConverterStringLocalDate() );
+		UtilFX.bindBidirectional( datePickerInscription.getEditor(), courant.dateInscriptionEProperty(), new ConverterStringLocalDate() );
 		// Catégorie
-		textFieldCategorie.textProperty().bindBidirectional( courant.nomProperty() );
+		textFieldCategorie.textProperty().bindBidirectional( courant.idCategorie1Property(), new ConverterStringInteger() );
+		// Course
+		textFieldCourse.textProperty().bindBidirectional( courant.idCourseProperty(), new ConverterStringInteger());
 		
 		
 		//NmbreRepas
-		textFieldNbrRepas.textProperty().bindBidirectional( courant.idEquipeProperty(), new ConverterStringInteger()  );
+		textFieldNbrRepas.textProperty().bindBidirectional( courant.nbreRepasProperty(), new ConverterStringInteger()  );
 		//IdCompte
-		textFieldIdCompte.textProperty().bindBidirectional( courant.idEquipeProperty(), new ConverterStringInteger()  );
+		textFieldIdCompte.textProperty().bindBidirectional( courant.idCompteProperty(), new ConverterStringInteger()  );
 		// Validation
 		checkBoxValidation.selectedProperty().bindBidirectional( courant.validationProperty() );
 		
@@ -124,14 +101,14 @@ public class ControllerEquipeForm {
 	@FXML
 	private void doAnnuler() {
 		verifierValiditeSaisie();
-		managerGui.showView( EnumView.MemoListe );
+		managerGui.showView( EnumView.EquipeListe );
 	}
 	
 	@FXML
-	private void doOkay() {
+	private void doValider() {
 		verifierValiditeSaisie();
 		modelEquipe.validerMiseAJour();
-		managerGui.showView( EnumView.MemoListe );
+		managerGui.showView( EnumView.EquipeListe );
 	}
 	
 	
@@ -170,9 +147,7 @@ public class ControllerEquipeForm {
 	
 	private void verifierValiditeSaisie() {
 		Equipe courant = modelEquipe.getCourant();
-		UtilFX.checkParseError( textFieldCapitaine, courant.idCandidatCapProperty() );
-		UtilFX.checkParseError( textFieldEquipier, courant.idCandidatEqProperty() );
 		UtilFX.checkParseError( textFieldNom, courant.nomProperty() );
-		UtilFX.checkParseError( datePicherInscription.getEditor(), courant.dateInscriptionEProperty() );
+		UtilFX.checkParseError( textFieldNbrRepas, courant.nbreRepasProperty() );
 	}
 }
