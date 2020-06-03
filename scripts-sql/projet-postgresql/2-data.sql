@@ -26,19 +26,54 @@ DELETE FROM compteA;
 
 -- compteA
 INSERT INTO compteA (idcompte, login, motdepasse ) VALUES 
-  (1, 'pao', 'pao'),
-  (2, 'soso', 'soso' ),
-  (3, 'amanda', 'amanda' ),
-  (4, 'chachy', 'chachy' );
-  ALTER TABLE comptea ALTER COLUMN idcompte RESTART WITH 5;
+ 		(1, 'pao', 'pao'),
+ 		(2, 'soso', 'soso' ),
+  		(3, 'amanda', 'amanda' ),
+   		(4, 'toto', 'toto' ),
+    	(5, 'tata', 'tata' ),
+     	(6, 'line', 'line' ),
+      	(7, 'titi', 'titi' ),
+       	(8, 'amanda1', 'amanda1' ),
+       	(9, 'amanda2', 'amanda2' ),  
+        (10, 'pao1', 'pao1' ),
+        (11, 'pao2', 'pao2' ),
+        (12, 'telephe', 'telephe' ),
+        (13, 'telephe1', 'telephe1' ),
+        (14, 'telephe2', 'telephe2' ),
+        (15, 'charlene', 'charlene' ),
+        (16, 'charlene1', 'charlene1' ),
+        (17, 'charlene2', 'charlene2' ),
+        (18, 'wofa', 'wofa' ),
+        (19, 'wofa1', 'wofa1' ),
+        (20, 'wofa2', 'wofa2' );
+  
+   
+  ALTER TABLE comptea ALTER COLUMN idcompte RESTART WITH 21;
   
 -- candidat
 INSERT INTO candidat (idcandidat, club, nom, prenom, dateden, adresse, numtelephone,
 mail) VALUES 
-(1, 'pao121', 'ngassie', 'sorelle','2008-04-06' , '189paris' , '05688452','sorelle@3il.fr' ),
-(2, 'pao141', 'ngassie2', 'sorelle','2008-04-06' , '189paris' , '05688452','sorelle@3il.fr' ),
-(3, 'club1', 'retory', 'amanda','2008-04-06' , '189paris' , '05688452','sorelle@3il.fr' );
-ALTER TABLE candidat ALTER COLUMN idcandidat RESTART WITH 4;
+(1, 'club1', 'ngassie', 'sorelle','2008-04-06' , '189paris' , '05688452','sorelle@3il.fr' ),
+(2, 'club2', 'wofa', 'emilia','2008-07-06' , '189paris' , '05688452','leo@3il.fr' ),
+(3, 'club1', 'charlene', 'nathalie','2008-04-06' , '179paris' , '06688452','titi@3il.fr' ),
+(4, 'club1', 'amanda', 'vanessa','2008-02-06' , '189paris' , '05688452','lolo@3il.fr' ),
+(5, 'club3', 'leo', 'jennifer','2008-04-06' , '189paris' , '05688452','lili@3il.fr' ),
+(6, 'club1', 'lulu', 'emma','2008-01-06' , '189paris' , '05688452','rose@3il.fr' ),
+(7, 'club1', 'andre', 'sonya','2008-04-06' , '189paris' , '05688452','marc@3il.fr' ),
+(8, 'club4', 'marc', 'murielle','2008-01-06' , '189paris' , '05688452','heidi@3il.fr' ),
+(9, 'club1', 'titi', 'audrey','2008-04-06' , '189paris' , '05688452','sorelle@3il.fr' ),
+(10, 'club2', 'harris', 'marcelle','2008-04-06' , '189paris' , '05688452','fionna@3il.fr' ),
+(11, 'club4', 'soso', 'diva','2008-04-06' , '189paris' , '05688452','falonne@3il.fr' ),
+(12, 'club1', 'heidi', 'kelly','2008-04-06' , '189paris' , '05688452','sorelle@3il.fr' ),
+(13, 'club3', 'brandy', 'leila','2008-04-06' , '189paris' , '05688452','desir@3il.fr' ),
+(14, 'club3', 'telephe', 'anais','2008-01-06' , '189paris' , '05688452','sorelle@3il.fr' ),
+(15, 'club3', 'linda', 'hilona','2008-04-07' , '189paris' , '05688452','charlene@3il.fr' ),
+(16, 'club3', 'dylan', 'charlene','2008-04-06' , '189paris' , '05688452','loli@3il.fr' ),
+(17, 'club3', 'liam', 'sophie','2008-04-06' , '189paris' , '05688452','boubounette@3il.fr' ),
+(18, 'club3', 'jerome', 'dolly','2008-04-06' , '189paris' , '05688452','nkoah@3il.fr' ),
+(19, 'club3', 'claude', 'jenny','2008-04-06' , '189paris' , '05688452','theo@3il.fr' ),
+(20, 'club3', 'cassy', 'kim','2008-04-06' , '189paris' , '05688452','chastin@3il.fr' );
+ALTER TABLE candidat ALTER COLUMN idcandidat RESTART WITH 21;
   
 -- benevoles
 
