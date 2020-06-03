@@ -6,6 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="500.0" prefWidth="1000.0" styleClass="fond-d-ecran" xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projet.view.systeme.ControllerInfo">
    <children>
@@ -14,10 +15,13 @@
          <children>
             <HBox alignment="CENTER" prefHeight="300.0" prefWidth="1000.0" spacing="50.0">
                <children>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="250.0" prefWidth="100.0" text="Button" />
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="250.0" prefWidth="100.0" text="Button" />
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="250.0" prefWidth="100.0" text="Button" />
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="250.0" prefWidth="100.0" text="Button" />
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="270.0" prefWidth="140.0" text="INFORMATIONS">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Button>
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#doCandidat" prefHeight="270.0" prefWidth="140.0" text="CANDIDATS" />
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#doEquipe" prefHeight="270.0" prefWidth="140.0" text="EQUIPES" />
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#doBenevole" prefHeight="270.0" prefWidth="140.0" text="BENEVOLES" />
                </children>
             </HBox>
             <Label fx:id="labelMessage" styleClass="message-accueil" text="Message" />
