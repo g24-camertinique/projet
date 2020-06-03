@@ -78,9 +78,17 @@ ALTER TABLE candidat ALTER COLUMN idcandidat RESTART WITH 21;
 -- benevoles
 
  INSERT INTO benevole (idbenevole, nom, prenom, dateden, adresse, numtelephone, mail, interne, disponibilite , validation , dateinscriptionb, idcompte) VALUES 
-  (1,'wofa', 'paolyne','2000-01-04' , '185limoges' , '05854278','pao@3il.fr','true',' indisponible','false','2000-04-06',1 ),
-   (2,'ngassie', 'sorelle','2000-02-04' , '185nice' , '05854978','wofa@3il.fr','false',' disponible','true','2000-04-07',2 );
-ALTER TABLE benevole ALTER COLUMN idbenevole RESTART WITH 3;
+  (1,'wofa', 'paolyne','2000-01-02' , '185limoges' , '05854278','pao@3il.fr','true',' indisponible','false','2000-04-06',1 ),
+  (2,'ngassie', 'sorelle','2000-02-04' , '185nice' , '07596345','wofa@3il.fr','false',' disponible','true','2000-08-07',2 ),
+  (3,'nguenkep', 'charlene','2000-01-04' , '200pierrelaye' , '75942684','charlene@3il.fr','false',' indisponible','true','2000-08-08',3 ),
+  (4,'djipdjo', 'charlena','1992-02-04' , '18toulouse' , '85488821','charlena@3il.fr','false',' indisponible','true','2000-06-09',4 ),
+  (5,'retory', 'anais','2000-12-03' , '48babylone' , '63666972','anais@3il.fr','false',' indisponible','true','2000-04-10',5 ),
+  (6,'telephe', 'emmanuel','1999-08-05' , '110chateauroux' , '78744521','emmanuel@3il.fr','false',' disponible','true','2000-07-11',6 ),
+  (7,'delafenetre', 'matheo','2009-09-09' , '185nice' , '96369896','matheo@3il.fr','false',' indisponible','true','2000-01-25',7 ),
+  (8,'delarmoire', 'pierre','1988-02-05' , '185nice' , '54141236','pierre@3il.fr','false',' disponible','true','2000-06-13',8 ),
+  (9,'dupont', 'aigle','1963-03-07' , '185nice' , '78959563','aigle@3il.fr','false',' disponible','true','2000-09-14',9 ),
+  (10,'duvent', 'lion','2017-01-08' , '185nice' , '02014503','duvent@3il.fr','false',' indisponible','true','2000-04-22',10 );
+ALTER TABLE benevole ALTER COLUMN idbenevole RESTART WITH 11;
 
 -- poste
  
