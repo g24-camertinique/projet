@@ -23,10 +23,12 @@
          </font></Label>
       <HBox alignment="CENTER" fillHeight="false" layoutY="60.0" prefHeight="60.0" AnchorPane.bottomAnchor="385.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0">
          <children>
-            <GridPane alignment="CENTER" prefWidth="280.0">
+            <GridPane alignment="CENTER" prefHeight="30.0" prefWidth="335.0">
                <columnConstraints>
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="75.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="200.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="60.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="95.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                </columnConstraints>
                <rowConstraints>
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -40,11 +42,21 @@
                      <font>
                         <Font name="Century Gothic" size="16.0" />
                      </font></TextField>
+                  <Label text="Id Compte:" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="Century Gothic" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textFieldIdCompte" editable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="50.0" GridPane.columnIndex="3">
+                     <font>
+                        <Font name="Century Gothic" size="16.0" />
+                     </font>
+                  </TextField>
                </children>
             </GridPane>
          </children>
       </HBox>
-      <HBox alignment="CENTER" layoutY="115.0" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+      <HBox alignment="CENTER" layoutY="95.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
          <children>
             <TabPane prefWidth="500.0" style="-fx-border-color: lightgray;" styleClass="jfx-tab-pane">
                <tabs>
@@ -61,43 +73,47 @@
                                     <RowConstraints maxHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
                                     <RowConstraints maxHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
                                     <RowConstraints maxHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
                                     <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
                                     <RowConstraints maxHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
                                  </rowConstraints>
                                  <children>
                                     <Label text="Nom :">
                                        <padding>
                                           <Insets right="10.0" />
-                                       </padding></Label>
-                                    <TextField fx:id="textFieldCapitaine" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                    <Label text="Capitaine :" GridPane.rowIndex="1">
+                                       </padding>
+                                    </Label>
+                                    <Label text="Nombre de Repas :" GridPane.rowIndex="1">
                                        <padding>
                                           <Insets right="10.0" />
-                                       </padding></Label>
-                                    <Label text="Équipier :" GridPane.rowIndex="2">
+                                       </padding>
+                                    </Label>
+                                    <Label text="Catégorie :" GridPane.rowIndex="4">
                                        <padding>
                                           <Insets right="10.0" />
-                                       </padding></Label>
-                                    <Label text="Catégorie :" GridPane.rowIndex="5">
-                                       <padding>
-                                          <Insets right="10.0" />
-                                       </padding></Label>
+                                       </padding>
+                                    </Label>
                                     <TextField fx:id="textFieldNom" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" GridPane.columnIndex="1" />
-                                    <TextField fx:id="textFieldEquipier" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                    <Label text="Date d'inscription :" GridPane.rowIndex="3">
+                                    <TextField fx:id="textFieldNbrRepas" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Label text="Date d'inscription :" GridPane.rowIndex="2">
                                        <padding>
                                           <Insets right="10.0" />
                                        </padding>
                                     </Label>
-                                    <DatePicker fx:id="datePickerInscription" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                    <TextField fx:id="textFieldCategorie" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                                    <TextField fx:id="textFieldCourse" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                    <Label text="Course :" GridPane.rowIndex="4">
+                                    <DatePicker fx:id="datePickerInscription" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <TextField fx:id="textFieldCategorie" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <TextField fx:id="textFieldCourse" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <Label text="Course :" GridPane.rowIndex="3">
                                        <padding>
                                           <Insets right="10.0" />
                                        </padding>
                                     </Label>
+                                    <Label text="Validation" GridPane.rowIndex="5">
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <CheckBox fx:id="checkBoxValidation" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                                  </children>
                                  <padding>
                                     <Insets left="5.0" right="5.0" />
@@ -107,11 +123,11 @@
                         </HBox>
                      </content>
                   </Tab>
-                  <Tab closable="false" text="Coordonnées">
+                  <Tab closable="false" text="Candidats">
                     <content>
                       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="500.0">
                            <children>
-                              <GridPane alignment="CENTER" layoutX="24.0" layoutY="75.0" prefHeight="150.0" prefWidth="450.0" AnchorPane.topAnchor="75.0">
+                              <GridPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="200.0" prefWidth="450.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="50.0">
                                 <columnConstraints>
                                   <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="-Infinity" prefWidth="200.0" />
                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" prefWidth="250.0" />
@@ -119,31 +135,38 @@
                                 <rowConstraints>
                                   <RowConstraints maxHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
                                     <RowConstraints maxHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <Label text="Nombre de Repas :">
+                                    <Label text="Id Capitaine :">
                                        <padding>
                                           <Insets right="10.0" />
-                                       </padding></Label>
-                                    <TextField fx:id="textFieldNbrRepas" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" GridPane.columnIndex="1">
-                                       <padding>
-                                          <Insets left="10.0" right="10.0" />
                                        </padding>
-                                    </TextField>
-                                    <Label text="Id Compte :" GridPane.rowIndex="1">
+                                    </Label>
+                                    <Label text="Nom Capitaine :" GridPane.rowIndex="1">
                                        <padding>
                                           <Insets right="10.0" />
-                                       </padding></Label>
-                                    <Label text="Validation" GridPane.rowIndex="2">
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="textFieldNomCapitaine" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Label text="Id Équipier" GridPane.rowIndex="2">
                                        <padding>
                                           <Insets right="10.0" />
-                                       </padding></Label>
-                                    <CheckBox fx:id="checkBoxValidation" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                    <TextField fx:id="textFieldIdCompte" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="textFieldEquipier" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <Label text="Nom Équipier :" GridPane.rowIndex="3">
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="textFieldNomEquipier" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <TextField fx:id="textFieldCapitaine" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="50.0" GridPane.columnIndex="1" />
                                  </children>
                               </GridPane>
-                           </children></AnchorPane>
+                           </children>
+                        </AnchorPane>
                     </content>
                   </Tab>
                </tabs>

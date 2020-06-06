@@ -23,10 +23,7 @@ public class ControllerEquipeForm {
 	private TextField		textFieldId;
 	@FXML
 	private TextField		textFieldNom;
-	@FXML
-	private TextField		textFieldCapitaine;
-	@FXML
-	private TextField		textFieldEquipier;
+
 	@FXML
 	private DatePicker		datePickerInscription;
 	@FXML
@@ -41,6 +38,16 @@ public class ControllerEquipeForm {
 	private TextField		textFieldIdCompte;
 	@FXML
 	private CheckBox		checkBoxValidation;
+	
+	@FXML
+	private TextField		textFieldCapitaine;
+	@FXML
+	private TextField		textFieldEquipier;
+	@FXML
+	private TextField		textFieldNomCapitaine;
+	@FXML
+	private TextField		textFieldNomEquipier;
+	
 	
 
 	// Autres champs
@@ -72,6 +79,12 @@ public class ControllerEquipeForm {
 		textFieldCapitaine.textProperty().bindBidirectional( courant.idCandidatCapProperty(), new ConverterStringInteger() );
 		//Équipier
 		textFieldEquipier.textProperty().bindBidirectional( courant.idCandidatEqProperty(), new ConverterStringInteger() );
+		
+		// Nom Capitaine
+				textFieldNomCapitaine.textProperty().bindBidirectional( courant.nomCandidatCapProperty() );
+		// Nom Équipier
+				textFieldNomEquipier.textProperty().bindBidirectional( courant.nomCandidatEqProperty() );
+		
 		// Date inscription
 		UtilFX.bindBidirectional( datePickerInscription.getEditor(), courant.dateInscriptionEProperty(), new ConverterStringLocalDate() );
 		// Catégorie
