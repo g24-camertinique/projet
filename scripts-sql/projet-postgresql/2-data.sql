@@ -45,10 +45,19 @@ INSERT INTO compteA (idcompte, login, motdepasse ) VALUES
         (17, 'charlene2', 'charlene2' ),
         (18, 'wofa', 'wofa' ),
         (19, 'wofa1', 'wofa1' ),
-        (20, 'wofa2', 'wofa2' );
+        (20, 'wofa2', 'wofa2' ),
+        (21, 'wofa3', 'wofa3' ),
+        (22, 'wofa4', 'wofa4' ),
+        (23, 'amanda3', 'amanda3' ),
+        (24, 'amanda4', 'amanda4' ),
+        (25, 'charlene3', 'charlene3' ),
+        (26, 'charlene4', 'charlene4' ),
+        (27, 'telephe3', 'telephe3' ),
+        (28, 'telephe4', 'telephe4' ),
+        (29, 'charlene5', 'charlene5'),
+        (30, 'charlene6', 'charlene6');
   
-   
-  ALTER TABLE comptea ALTER COLUMN idcompte RESTART WITH 21;
+  ALTER TABLE comptea ALTER COLUMN idcompte RESTART WITH 31;
   
 -- candidat
 INSERT INTO candidat (idcandidat, club, nom, prenom, dateden, adresse, numtelephone,
@@ -87,7 +96,20 @@ ALTER TABLE candidat ALTER COLUMN idcandidat RESTART WITH 21;
   (7,'delafenetre', 'matheo','2009-09-09' , '185nice' , '96369896','matheo@3il.fr','false',' indisponible','true','2000-01-25',7 ),
   (8,'delarmoire', 'pierre','1988-02-05' , '185nice' , '54141236','pierre@3il.fr','false',' disponible','true','2000-06-13',8 ),
   (9,'dupont', 'aigle','1963-03-07' , '185nice' , '78959563','aigle@3il.fr','false',' disponible','true','2000-09-14',9 ),
-  (10,'duvent', 'lion','2017-01-08' , '185nice' , '02014503','duvent@3il.fr','false',' indisponible','true','2000-04-22',10 );
+  (10,'duvent', 'lion','2017-01-08' , '185nice' , '02014503','duvent@3il.fr','false',' indisponible','true','2000-04-22',10 ),
+  (11,'DAVIS', 'Didier','2017-01-08' , '185nice' , '02014503','duvent@3il.fr','false',' indisponible','true','2000-04-22',21 ),
+  (12,'COURSE', 'Barlett','2017-01-08' , '185nice' , '02014503','duvent@3il.fr','false',' indisponible','true','2000-04-22',22 ),
+  (13,'BOULANGER', 'Olivie','2017-01-08' , '185nice' , '02014503','duvent@3il.fr','false',' indisponible','true','2000-04-22',23 ),
+  (14,'LAFONTAINE', 'Gauthier','2017-01-08' , '185nice' , '02014503','duvent@3il.fr','false',' indisponible','true','2000-04-22',24 ),
+  (15,'ROUSSEL', 'Amabella','2017-01-08' , '185nice' , '02014503','duvent@3il.fr','false',' indisponible','true','2000-04-22',25 ),
+  (16,'LANGLOIS', 'Neville','2017-01-08' , '185nice' , '02014503','duvent@3il.fr','false',' indisponible','true','2000-04-22',26 ),
+  (17,'FREMONT', 'Parnella','2017-01-08' , '185nice' , '02014503','duvent@3il.fr','false',' indisponible','true','2000-04-22',27 ),
+  (18,'MONJEAU', 'Océane','2017-01-08' , '185nice' , '02014503','duvent@3il.fr','false',' indisponible','true','2000-04-22',28 ),
+  (19,'PEPIN', 'Gaetane','2017-01-08' , '185nice' , '02014503','duvent@3il.fr','false',' indisponible','true','2000-04-22',29 ),
+  (20,'PIROUET', 'Arnou','2017-01-08' , '185nice' , '02014503','duvent@3il.fr','false',' indisponible','true','2000-04-22',30 );
+  
+ 
+  
 ALTER TABLE benevole ALTER COLUMN idbenevole RESTART WITH 11;
 
 -- poste
@@ -136,9 +158,17 @@ INSERT INTO document (iddocument, libelle, idcandidat ) VALUES
  
 -- equipes
 INSERT INTO equipe (idequipe, nom, nbrerepas, validation, dateinscriptione, idcompte, idcourse, idcategorie1, idcandidatcap, idcandidateq) VALUES 
-  (1, 'team1', 10, 'false', '2015-01-02', 1, 1, 1, 1, 2),
-  (2, 'team2', 14, 'true','2017-02-05' , 3, 1,1,1,2);
-   ALTER TABLE equipe ALTER COLUMN idequipe RESTART WITH 3;
+  (1, 'team1', 10, 'false', '2020-01-02', 11, 1, 2, 1, 2),
+  (2, 'team2', 0, 'false','2020-02-05' , 12, 1,2,3,4),
+  (3, 'team3', 5, 'true','2020-03-15' , 13, 1,3,5,6),
+  (4, 'team4', 14, 'true','2020-04-25' , 14, 1,3,7,8),
+  (5, 'team5', 7, 'false','2020-05-30' , 15, 1,3,9,10),
+  (6, 'team6', 2, 'true','2020-02-28' , 16, 1,2,11,12),
+  (7, 'team7', 4, 'false','2020-04-12' , 17, 1,3,13,14),
+  (8, 'team8', 8, 'false','2020-05-23' , 18, 1,1,15,16),
+  (9, 'team9', 16, 'true','2020-01-17' , 19, 1,1,17,18),
+  (10, 'team10', 9, 'true','2020-03-09' , 20, 1,4,19,20);
+   ALTER TABLE equipe ALTER COLUMN idequipe RESTART WITH 11;
   
 --souhaiter
  INSERT INTO souhaiter (idposte, idbenevole) VALUES 
@@ -154,7 +184,8 @@ INSERT INTO equipe (idequipe, nom, nbrerepas, validation, dateinscriptione, idco
   
 -- Compte
 INSERT INTO compte (idcompte, pseudo, motdepasse, email ) VALUES 
-  (1, 'geek', 'geek', 'geek@3il.fr' ),
+	(1, 'secretaire', 'secretaire', 'secretaire@3il.fr'),
+  --(1, 'geek', 'geek', 'geek@3il.fr' ),
   (2, 'chef', 'chef', 'chef@3il.fr' ),
   (3, 'job', 'job', 'job@3il.fr' );
 
