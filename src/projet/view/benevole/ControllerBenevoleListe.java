@@ -100,6 +100,11 @@ public class ControllerBenevoleListe {
 		}
 	}
 	
+	@FXML
+	private void doRetour() {
+		managerGui.showView( EnumView.Info );
+	}
+	
 	
 	// Gestion des évènements
 
@@ -130,5 +135,7 @@ public class ControllerBenevoleListe {
 			buttonSupprimer.setDisable(false);
 		}
 	}
+	
+
 
 }

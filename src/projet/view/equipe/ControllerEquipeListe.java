@@ -92,6 +92,10 @@ public class ControllerEquipeListe {
 		}
 	}
 	
+	@FXML
+	private void doRetour() {
+		managerGui.showView( EnumView.Info );
+	}
 	
 	// Gestion des évènements
 

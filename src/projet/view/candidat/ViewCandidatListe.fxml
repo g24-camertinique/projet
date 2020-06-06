@@ -22,6 +22,7 @@
       </HBox>
       <HBox alignment="CENTER" layoutY="263.0" prefHeight="60.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
+            <Button mnemonicParsing="false" onAction="#doRetour" prefHeight="30.0" prefWidth="100.0" text="Retour" />
             <Button mnemonicParsing="false" onAction="#doAjouter" prefHeight="30.0" prefWidth="100.0" text="Ajouter" />
             <Button fx:id="buttonModifier" mnemonicParsing="false" onAction="#doModifier" prefHeight="30.0" prefWidth="100.0" text="Modifier" />
             <Button fx:id="buttonSupprimer" mnemonicParsing="false" onAction="#doSupprimer" prefHeight="30.0" prefWidth="100.0" text="Supprimer" />

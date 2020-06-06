@@ -99,6 +99,10 @@ public class ControllerCandidatListe {
 		}
 	}
 	
+	@FXML
+	private void doRetour() {
+		managerGui.showView( EnumView.Info );
+	}
 	
 	// Gestion des évènements
 
