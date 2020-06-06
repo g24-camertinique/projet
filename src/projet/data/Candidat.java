@@ -166,12 +166,11 @@ public class Candidat {
 	}
 	
 	
-
 	
-	
-	
-	
-
+	public final String getNomComplet() {
+		String nomC = this.nomProperty().get() + " " + this.prenomProperty().get();
+		return nomC;
+	}
 		
 	
 

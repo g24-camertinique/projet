@@ -208,6 +208,9 @@ public class Benevole {
 		}
 
 		
-		
+		public final String getNomComplet() {
+			String nomC = this.nomProperty().get() + " " + this.prenomProperty().get();
+			return nomC;
+		}
 
 }

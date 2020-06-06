@@ -46,7 +46,7 @@ public class ControllerBenevoleListe {
 		// Data binding
 		listView.setItems( modelBenevole.getListe() );
 		
-		listView.setCellFactory(  UtilFX.cellFactory( item -> item.getNom() ));
+		listView.setCellFactory(  UtilFX.cellFactory( item -> item.getNomComplet() ));
 
 		Image image = new Image("projet/view/icone.png");
 		imageLogo.setImage(image);

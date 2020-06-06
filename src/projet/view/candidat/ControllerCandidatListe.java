@@ -45,7 +45,8 @@ public class ControllerCandidatListe {
 		// Data binding
 		listView.setItems( modelCandidat.getListe() );
 		
-		listView.setCellFactory(  UtilFX.cellFactory( item -> item.getNom() ));
+		listView.setCellFactory(  UtilFX.cellFactory( item -> item.getNomComplet() ) );
+
 		
 		Image image = new Image("projet/view/icone.png");
 		imageLogo.setImage(image);
