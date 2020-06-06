@@ -23,6 +23,10 @@ public class DaoEquipe {
 
 	@Inject
 	private DataSource dataSource;
+	@Inject
+	private DaoCandidat daoCandidatCap = new DaoCandidat();
+	@Inject
+	private DaoCandidat daoCandidatEq = new DaoCandidat();
 
 	// Actions
 
@@ -44,8 +48,17 @@ public class DaoEquipe {
 			stmt.setObject(5, equipe.getIdCompte());
 			stmt.setObject(6, equipe.getIdCourse());
 			stmt.setObject(7, equipe.getIdCategorie1());
+			
+//			stmt.setObject( 8, equipe.getCandidatCapitaine().getIdCandidat() );
+//			stmt.setObject( 9, equipe.getCandidatEquipier().getIdCandidat() );
+			
 			stmt.setObject(8, equipe.getIdCandidatCap());
 			stmt.setObject(9, equipe.getIdCandidatEq());
+			
+			
+//			stmt.setObject(9,equipe.getNomCandidatCap());
+//			stmt.setObject(10,equipe.getNomCandidatEq());
+			
 			stmt.executeUpdate();
 
 			// Récupère l'identifiant généré par le SGBD
@@ -80,9 +93,20 @@ public class DaoEquipe {
 			stmt.setObject(5, equipe.getIdCompte());
 			stmt.setObject(6, equipe.getIdCourse());
 			stmt.setObject(7, equipe.getIdCategorie1());
+			
+//			stmt.setObject( 8, equipe.getCandidatCapitaine().getIdCandidat() );
+//			stmt.setObject( 9, equipe.getCandidatEquipier().getIdCandidat() );
+			
 			stmt.setObject(8, equipe.getIdCandidatCap());
 			stmt.setObject(9, equipe.getIdCandidatEq());
+			
+			
+			
 			stmt.setObject(10, equipe.getIdEquipe());
+			
+//			stmt.setObject(9,equipe.getNomCandidatCap());
+//			stmt.setObject(10,equipe.getNomCandidatEq());
+			
 			stmt.executeUpdate();
 
 		} catch (SQLException e) {
@@ -127,7 +151,7 @@ public class DaoEquipe {
 			rs = stmt.executeQuery();
 
 			if (rs.next()) {
-				return construireEquipe(rs);
+				return construireEquipe(rs,true);
 			} else {
 				return null;
 			}
@@ -153,7 +177,7 @@ public class DaoEquipe {
 
 			List<Equipe> equipes = new LinkedList<>();
 			while (rs.next()) {
-				equipes.add(construireEquipe(rs));
+				equipes.add(construireEquipe(rs,false));
 			}
 			return equipes;
 
@@ -166,7 +190,7 @@ public class DaoEquipe {
 
 	// Méthodes auxiliaires
 
-	private Equipe construireEquipe(ResultSet rs) throws SQLException {
+	private Equipe construireEquipe(ResultSet rs,boolean flagComplet) throws SQLException {
 		Equipe equipe = new Equipe();
 		equipe.setIdEquipe(rs.getObject("idequipe", Integer.class));
 		equipe.setNom(rs.getObject("nom", String.class));
@@ -177,9 +201,20 @@ public class DaoEquipe {
 		equipe.setIdCourse(rs.getObject("idcourse", Integer.class));
 		equipe.setIdCategorie1(rs.getObject("idcategorie1", Integer.class));
 		
+		
 		equipe.setIdCandidatCap(rs.getObject("idcandidatcap", Integer.class));
 		equipe.setIdCandidatEq(rs.getObject("idcandidateq", Integer.class));
 		
+		if(flagComplet) {
+		equipe.setNomCandidatCap(    daoCandidatCap.retrouver(rs.getObject("idcandidatcap", Integer.class))    .getNom()     );
+		equipe.setNomCandidatEq( daoCandidatEq.retrouver(rs.getObject("idcandidateq", Integer.class)).getNom());
+		}
+//		if(flagComplet) {
+//			equipe.setCandidatCapitaine(daoCandidatCap.retrouver(rs.getObject("idcandidatcap", Integer.class)));
+//			equipe.setCandidatEquipier(daoCandidatEq.retrouver(rs.getObject("idcandidateq", Integer.class)));
+//		}
+//		
+//		
 		//equipe.setCandidatCapitaine(CandidatCapitaine,String.class);
 
 		return equipe;

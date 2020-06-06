@@ -28,11 +28,11 @@ public class Equipe  {
 	private final Property<Integer>		idCandidatCap		= new SimpleObjectProperty<>();
 	private final Property<Integer>		idCandidatEq		= new SimpleObjectProperty<>();
 	
-	private final StringProperty		nomCandidatCap	= new SimpleStringProperty();
-	private final StringProperty		nomCandidatEq 	= new SimpleStringProperty();
+	private final Property<Candidat> CandidatCapitaine 		=new SimpleObjectProperty<>();
+	private final Property<Candidat> CandidatEquipier 		=new SimpleObjectProperty<>();
 	
-	//private final Property<Candidat> CandidatCapitaine =new SimpleObjectProperty<>();
-	//private final Property<Candidat> CandidatEquipier =new SimpleObjectProperty<>();
+	private final StringProperty	nomCandidatCap			= new SimpleStringProperty();
+	private final StringProperty	nomCandidatEq			= new SimpleStringProperty();
 	
 	
 	
@@ -188,40 +188,60 @@ public class Equipe  {
 		this.idCandidatEqProperty().setValue(idCandidatEq);
 	}
 	
-//	public final Property<Candidat> CandidatCapitaineProperty() {
-//		return this.CandidatCapitaine;
-//	}
-//	
-//
-//
-//	public final Candidat getCandidatCapitaine() {
-//		return this.CandidatCapitaineProperty().getValue();
-//	}
-//	
-//
-//
-//	public final void setCandidatCapitaine(final Candidat CandidatCapitaine) {
-//		this.CandidatCapitaineProperty().setValue(CandidatCapitaine);
-//	}
-//	
-//
-//
-//	public final Property<Candidat> CandidatEquipierProperty() {
-//		return this.CandidatEquipier;
-//	}
-//	
-//
-//
-//	public final Candidat getCandidatEquipier() {
-//		return this.CandidatEquipierProperty().getValue();
-//	}
-//	
-//
-//
-//	public final void setCandidatEquipier(final Candidat CandidatEquipier) {
-//		this.CandidatEquipierProperty().setValue(CandidatEquipier);
-//	}
+	public final Property<Candidat> CandidatCapitaineProperty() {
+		return this.CandidatCapitaine;
+	}
 	
+
+
+	public final Candidat getCandidatCapitaine() {
+		return this.CandidatCapitaineProperty().getValue();
+	}
+	
+
+
+	public final void setCandidatCapitaine(final Candidat CandidatCapitaine) {
+		this.CandidatCapitaineProperty().setValue(CandidatCapitaine);
+	}
+	
+
+
+	public final Property<Candidat> CandidatEquipierProperty() {
+		return this.CandidatEquipier;
+	}
+	
+
+
+	public final Candidat getCandidatEquipier() {
+		return this.CandidatEquipierProperty().getValue();
+	}
+	
+
+
+	public final void setCandidatEquipier(final Candidat CandidatEquipier) {
+		this.CandidatEquipierProperty().setValue(CandidatEquipier);
+	}	
+	
+	// hashCode() & equals()
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(idEquipe.getValue() );
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Equipe other = (Equipe) obj;
+		return Objects.equals(idEquipe.getValue(), other.idEquipe.getValue() );
+	}
+	///
+
 	public final StringProperty nomCandidatCapProperty() {
 		return this.nomCandidatCap;
 	}
@@ -256,25 +276,6 @@ public class Equipe  {
 		this.nomCandidatEqProperty().set(nomCandidatEq);
 	}
 	
-	
-	// hashCode() & equals()
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(idEquipe.getValue() );
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Equipe other = (Equipe) obj;
-		return Objects.equals(idEquipe.getValue(), other.idEquipe.getValue() );
-	}
 
 
 	
