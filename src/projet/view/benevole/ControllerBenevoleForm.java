@@ -108,7 +108,7 @@ public class ControllerBenevoleForm {
 		
 		// Adresse
 		textAreaAdresse.textProperty().bindBidirectional( courant.adresseProperty() );
-// mail
+		// mail
 		textFieldMail.textProperty().bindBidirectional( courant.mailProperty() );
 		
 	

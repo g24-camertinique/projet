@@ -176,8 +176,11 @@ public class DaoEquipe {
 		equipe.setIdCompte(rs.getObject("idcompte", Integer.class));
 		equipe.setIdCourse(rs.getObject("idcourse", Integer.class));
 		equipe.setIdCategorie1(rs.getObject("idcategorie1", Integer.class));
+		
 		equipe.setIdCandidatCap(rs.getObject("idcandidatcap", Integer.class));
 		equipe.setIdCandidatEq(rs.getObject("idcandidateq", Integer.class));
+		
+		//equipe.setCandidatCapitaine(CandidatCapitaine,String.class);
 
 		return equipe;
 	}

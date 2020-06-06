@@ -28,7 +28,16 @@ public class Equipe  {
 	private final Property<Integer>		idCandidatCap		= new SimpleObjectProperty<>();
 	private final Property<Integer>		idCandidatEq		= new SimpleObjectProperty<>();
 	
+	private final StringProperty		nomCandidatCap	= new SimpleStringProperty();
+	private final StringProperty		nomCandidatEq 	= new SimpleStringProperty();
 	
+	//private final Property<Candidat> CandidatCapitaine =new SimpleObjectProperty<>();
+	//private final Property<Candidat> CandidatEquipier =new SimpleObjectProperty<>();
+	
+	
+	
+
+
 	//Getters & setters
 	public final Property<Integer> idEquipeProperty() {
 		return this.idEquipe;
@@ -179,6 +188,74 @@ public class Equipe  {
 		this.idCandidatEqProperty().setValue(idCandidatEq);
 	}
 	
+//	public final Property<Candidat> CandidatCapitaineProperty() {
+//		return this.CandidatCapitaine;
+//	}
+//	
+//
+//
+//	public final Candidat getCandidatCapitaine() {
+//		return this.CandidatCapitaineProperty().getValue();
+//	}
+//	
+//
+//
+//	public final void setCandidatCapitaine(final Candidat CandidatCapitaine) {
+//		this.CandidatCapitaineProperty().setValue(CandidatCapitaine);
+//	}
+//	
+//
+//
+//	public final Property<Candidat> CandidatEquipierProperty() {
+//		return this.CandidatEquipier;
+//	}
+//	
+//
+//
+//	public final Candidat getCandidatEquipier() {
+//		return this.CandidatEquipierProperty().getValue();
+//	}
+//	
+//
+//
+//	public final void setCandidatEquipier(final Candidat CandidatEquipier) {
+//		this.CandidatEquipierProperty().setValue(CandidatEquipier);
+//	}
+	
+	public final StringProperty nomCandidatCapProperty() {
+		return this.nomCandidatCap;
+	}
+	
+
+
+	public final String getNomCandidatCap() {
+		return this.nomCandidatCapProperty().get();
+	}
+	
+
+
+	public final void setNomCandidatCap(final String nomCandidatCap) {
+		this.nomCandidatCapProperty().set(nomCandidatCap);
+	}
+	
+
+
+	public final StringProperty nomCandidatEqProperty() {
+		return this.nomCandidatEq;
+	}
+	
+
+
+	public final String getNomCandidatEq() {
+		return this.nomCandidatEqProperty().get();
+	}
+	
+
+
+	public final void setNomCandidatEq(final String nomCandidatEq) {
+		this.nomCandidatEqProperty().set(nomCandidatEq);
+	}
+	
 	
 	// hashCode() & equals()
 
@@ -198,6 +275,14 @@ public class Equipe  {
 		Equipe other = (Equipe) obj;
 		return Objects.equals(idEquipe.getValue(), other.idEquipe.getValue() );
 	}
+
+
+	
+	
+
+
+	
+	
 
 	
 	
