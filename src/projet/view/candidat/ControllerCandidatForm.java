@@ -101,7 +101,7 @@ public class ControllerCandidatForm {
 		textAreaAdresse.textProperty().bindBidirectional( courant.adresseProperty() );
 
 		// Mail
-		textFieldClub.textProperty().bindBidirectional( courant.mailProperty() );
+		textFieldMail.textProperty().bindBidirectional( courant.mailProperty() );
 	
 		
 //		// Schéma
